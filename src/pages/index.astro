@@ -1,17 +1,48 @@
 ---
+// src/pages/index.astro
+import { microcmsClient } from '../library/microcms';
 
+// microCMSから「news」エンドポイントのデータを取得
+const response = await microcmsClient.get({
+  endpoint: "news",
+  queries: { limit: 3 }, // 取得件数の指定
+});
+
+// 取得した記事データの配列
+const newsList = response.contents;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>谷津干潟ナビ</h1>
-	</body>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<title>谷津干潟ナビ</title>
+</head>
+
+<body>
+	<h1>谷津干潟ナビ</h1>
+	<ul>
+  {newsList.map((news) => (
+    <li class="py-4 flex items-center gap-4 border-b border-gray-100">
+      <!-- 日付 -->
+      <time class="text-gray-500 text-sm min-w-[100px]">
+        {new Date(news.date).toLocaleDateString('ja-JP')}
+      </time>
+      
+      <!-- カテゴリ（バッジ） -->
+      <span class="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full">
+        {news.category[0]}
+      </span> 
+      
+      <!-- タイトル -->
+      <a href="#" class="text-gray-800 hover:text-blue-600 transition-colors font-medium">
+        {news.title}
+      </a>
+    </li>
+  ))}
+</ul>
+</body>
 </html>
