@@ -202,6 +202,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /**** フッター ****/
+
+/* ロゴ */
 .footer__logo {
 	display: block;
 	width: 150px;
@@ -216,10 +218,11 @@ h1, h2, h3, h4, h5, h6 {
 	width: 140px;
 }
 
+/* リンクリスト */
 .footer__list {
 	display: flex;
 	width: 100%;
-	margin: 10px auto 30px auto;
+	margin: 20px auto 30px auto;
 	font-size: 14px;
 	justify-content: space-around;
 	
@@ -232,8 +235,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__item {
 	flex: 1;
-	border-right: 1px solid #666;
+	border-right: 1px solid #ddd;
 	text-align: center;
+	line-height: 1;
 	
 	&:last-child {
 		border: none;
@@ -575,11 +579,10 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-
 /* パンくず */
 .c-breadcrumb__list {
 	display: flex;
-	margin: 0 5% 10px 5%;
+	margin: 10px 5% 10px 5%;
 }
 
 .c-breadcrumb__item {
@@ -1072,7 +1075,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/**** 保全・ルール */
+/**** 保全・ルール ****/
 .point_img {
 	display: flex;
 	gap: 40px;
