@@ -1,0 +1,257 @@
+/* ==========================================================================
+	全体
+   ========================================================================== */
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	min-height: 100vh;
+}
+
+.pc { display: block; }
+.sp { display: none; }
+
+@media (max-width: 768px) {
+    .pc { display: none; }
+	.sp { display: block; }
+}
+
+/* ==========================================================================
+	サイドバー
+   ========================================================================== */
+.sidebar {
+	width: 250px;
+	height: 100vh;
+	padding: 0 0 100px 0;
+	position: sticky;
+	top: 0;
+	background: #fff;
+	border-right: 1px solid #ECECEC;
+	overflow-y: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.sidebar::-webkit-scrollbar {
+	display: none;
+}
+
+/* ロゴ */
+.sidebar__logo {
+	display: block;
+	width: 100%;
+	padding: 70px 0 70px 0;
+	text-align: center;
+
+	& img {
+		display: inline;
+		width: 155px;
+	}
+}
+
+/* グローバルナビ */
+.gnavi__item {
+	position: relative;
+	display: block;
+	padding: 20px 0 20px 30px;
+	background-image: linear-gradient(to right, #DADADA 20%, rgba(255, 255, 255, 0) 0%);
+	background-size: 5px 1px;
+	background-repeat: repeat-x;
+	background-position: top;
+	line-height: 1.2;
+	letter-spacing: 0.5px;
+	font-size: 1.1rem;
+	font-family: var(--font-family-serif);
+	transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	
+	&::after {
+		position: absolute;
+		right: 30px;
+		font-family: 'Material Symbols Outlined';
+		content: '\e5cc';
+		font-size: 14px;
+	}
+	
+	&:hover {
+		background: var(--color-bg-base);
+	}
+	
+	& .gnavi__item__eng {
+		display: block;
+		font-size: 0.7rem;
+		color: #8EC0E5;
+		letter-spacing: 1.35px;
+	}
+}
+
+
+/* ==========================================================================
+	コンテンツエリア
+   ========================================================================== */
+.main {
+	flex: 1;
+	min-width: 0;
+}
+.main-container {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+/***** 基本ボックス *****/
+.mainbox {
+	position: relative;
+	margin: 0 45px 70px 45px;
+	padding: 30px 40px;
+	background: #fff;
+	border-radius: 4px;
+}
+
+
+/* ==========================================================================
+	フッター
+   ========================================================================== */
+.footer__logo {
+	display: block;
+	width: 150px;
+	margin: auto;
+	
+	& img {
+		width: 100%;
+	}
+}
+
+.footer__logo {
+	width: 140px;
+}
+
+.footer__list {
+	display: flex;
+	width: 70%;
+	margin: 10px auto 30px auto;
+	font-size: 14px;
+	justify-content: space-around;
+	
+	& a {
+		padding: 0 20px;
+		border-right: 1px solid #666;
+		color: var(--color-primary);
+	}
+}
+
+.footer__list-item {
+	flex: 1;
+}
+.footer__list li:last-child a {
+		border: none;
+}
+
+.footer__copy {
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+}
+
+
+/* SP版（例: 768px以下） */
+@media (max-width: 768px) {
+
+/* レイアウトを縦並びに切り替え */
+	.wrapper {
+		flex-direction: column;
+	}
+
+	/* ヘッダーを上部固定バーに変更 */
+	.sidebar {
+		width: 100%;
+		height: 60px;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		background: none;
+		border: none;
+		overflow: visible;
+	}
+
+	/* ロゴの位置調整 */
+	.sidebar__logo {
+		padding: 10px 0;
+		text-align: center;
+	}
+	.sidebar__logo img {
+		width: 150px;
+	}
+
+	/* ナビゲーションを初期状態では画面外（右側など）に隠す */
+	.gnavi {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: calc(100vh - 60px);
+		background: #fff;
+		transition: right 0.3s ease;
+		overflow-y: auto;
+	}
+
+	/* メニュー開く状態（is-openクラス付与時） */
+	.sidebar.is-open .gnavi {
+		right: 0;
+	}
+
+	.gnavi .tidearea {
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+		z-index: 100;
+		text-align: center;
+	}
+	
+	/* --- ハンバーガーボタンのスタイル --- */
+	.sidebar__toggle {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		background: #D6E8F6;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 6px;
+		z-index: 1001;
+	}
+
+	.sidebar__toggle span {
+		display: block;
+		width: 24px;
+		height: 2px;
+		background-color: #333;
+		transition: all 0.3s ease;
+	}
+
+	/* ボタンの×印アニメーション（is-open時） */
+	.sidebar.is-open .sidebar__toggle span:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+	.sidebar.is-open .sidebar__toggle span:nth-child(2) {
+		opacity: 0;
+	}
+	.sidebar.is-open .sidebar__toggle span:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	/* メインエリアの余白調整（固定ヘッダー分下げる） */
+	.main-container {
+		margin-top: 60px;
+	}
+	.mainbox {
+		margin: 20px 15px 40px 15px;
+		padding: 20px;
+	}
+}
+

@@ -1,0 +1,704 @@
+@media (max-width: 1200px) {
+
+/* ==========================================================================
+	全体レイアウト
+   ========================================================================== */
+
+.pc { display: none; }
+.sp { display: block; }
+
+/* 縦並びに切り替え */
+.wrapper {
+	flex-direction: column;
+}
+
+/**** グローバルナビ ****/
+.sidebar {
+	width: 100%;
+	height: auto;
+	position: relative;
+	padding: 0 0 0 0;
+	z-index: 1000;
+	background: none;
+	border: none;
+	overflow: visible;
+}
+
+/* ロゴ */
+.sidebar__logo {
+	padding: 30px 0 20px 0;
+	text-align: center;
+}
+.sidebar__logo img {
+	width: 160px;
+}
+
+/* ハンバーガーメニュー */
+.gnavi {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 100%;
+	height: 100dvh;
+	background: #fff;
+	transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+	overflow-y: auto;
+}
+
+/* メニュー開く状態（is-openクラス付与時） */
+.sidebar.is-open .gnavi {
+	right: 0;
+}
+.gnavi .tidearea {
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 30px 0 60px 0;
+	z-index: 100;
+	text-align: center;
+}
+.gnavi .tidearea__time {
+	text-align: center;
+}
+
+/* ハンバーガーボタンのスタイル */
+.sidebar__toggle {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 70px;
+	height: 70px;
+	background: #D6E8F6;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	z-index: 1001;
+}
+
+.sidebar__toggle span {
+	width: 40px;
+	height: 2px;
+	background-color: #333;
+	transition: all 0.3s ease;
+}
+
+/* ×印アニメーション（is-open時） */
+.sidebar.is-open .sidebar__toggle span:nth-child(1) {
+	transform: translateY(12px) rotate(45deg);
+}
+.sidebar.is-open .sidebar__toggle span:nth-child(2) {
+	opacity: 0;
+}
+.sidebar.is-open .sidebar__toggle span:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
+/**** コンテンツエリア ****/
+.main-container {
+	margin-top: 20px;
+}
+
+/**** 基本ボックス ****/
+.mainbox {
+	margin: 20px 40px 40px 40px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.mainbox__tophead {
+	margin: 10px 0 40px 0;
+	font-size: 18px;
+	text-align: center;
+	
+	& .mainbox__tophead-eng {
+		margin: 0 0 6px 0;
+		font-size: 14px;
+	}
+}
+
+/**** フッター ****/
+.footer__logo {
+	width: 120px;
+	margin: 0 auto 20px auto;
+}
+
+.footer__list {
+	flex-direction: row;
+	margin: 10px auto 20px auto;
+
+	& a {
+		padding: 0 5px;
+	}
+}
+
+.footer__item:last-child a {
+	border: none;
+}
+
+.footer__copy {
+	margin: 0 0 10px 0;
+	font-size: 12px;
+}
+
+/**** 下層ナビ ****/
+.unavi {
+	gap: 10px;
+	width: 95%;
+	margin: 0 auto 40px auto;
+}
+.unavi__item {
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+/**** 下層コンテンツ ****/
+/* Wrapper系 */
+.upage__box {
+	margin: 0 5% 70px 5%;
+	padding: 20px 20px;
+}
+.upage__section {
+	margin: 0 0 60px 0;
+}
+	
+/* 見出し系 */
+.upage__title {
+	margin: 0 0 40px 0;
+	font-size: 32px;
+}
+.upage > .upage__title {
+	margin: 0 0 40px 0;
+}
+.upage__title--eng {
+	margin: 0 0 12px 0;
+	font-size: 18px;
+}
+.upage__title--h2 {
+	margin: 0 0 30px 0;
+	line-height: 1.4;
+	font-size: 20px;
+}
+.upage__title--h3 {
+	margin: 0 0 40px 0;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+/* テキスト */
+.upage__text {
+	margin: 0 0 20px 0;
+}
+
+/* 画像基本 */
+.upage__section img {
+	width: 90%;
+	margin: auto;
+}
+
+/* 配置 中央画像 */
+.upage__img {
+	margin: 0 0 20px 0;
+}
+
+/* 配置 右画像→縦 */
+.upage__rightimg {
+	flex-direction: column;
+	gap: 20px;
+
+	& .upage__flexbox:nth-child(1) {
+		order: 2;
+	}
+	& .upage__flexbox:nth-child(2){
+		order: 1;
+		flex: 1;
+	}
+}
+.upage__flexbox {
+	& img {
+		height: auto;
+	}
+}
+
+/* 基本DTDD */
+.upage__dl {
+	flex-direction: column;
+	width: 100%;
+}
+.upage__dl dt {
+	flex: 1;
+	padding: 12px 0 0 0;
+	border-bottom: none;
+}
+.upage__dl dd {
+	flex: 1;
+	padding: 0 0 12px 16px;
+}
+
+/* ==========================================================================
+    コンポーネント 
+   ========================================================================== */
+
+/**** 一覧リスト ****/
+.news__list {
+	order: 2;
+	margin: -20px 0 0 ;
+	font-size: 16px;
+}
+
+/**** 協力パートナー ****/
+.c-partner {
+	width: 80%;
+	margin: 0 auto 50px auto;
+}
+
+.c-partner__head {
+	margin: 0 0 30px 0;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 1;
+	letter-spacing: 2px;
+
+	& .c-partner__head-eng {
+		display: block;
+		margin: 0 0 6px 0;
+		font-size: 16px;
+		font-family: var(--font-family-serif);
+		font-weight: normal;
+		color: var(--color-primary);
+	}
+}
+
+/* カード全体 */
+.c-partner__card {
+	flex-direction: column;
+	gap: 0;
+}
+
+/* リンク部分 */
+.c-partner__link {
+	flex-direction: column;
+
+	& img {
+		width: 100%;
+		height: auto;
+		margin: 0 0 4px 0;
+		aspect-ratio: 7 / 2;
+		object-fit: cover;
+	}
+}
+
+/* 募集中 */
+.looking {
+	padding: 0;
+}
+.looking__box {
+	width: 100%;
+	aspect-ratio: 7 / 2;
+}
+
+
+/* ==========================================================================
+	各ページCSS
+   ========================================================================== */
+
+/**** トップページ ****/
+
+/* 全体設定 */
+.hero-area {
+	height: 400px;
+	margin: 0 0 40px 0;
+	&::before {
+		top: 0;
+		right: 100px;
+		width: 90%;
+		height: 80%;
+    }
+}
+
+/* キャッチコピー */
+.hero__vertical {
+	margin: 0 auto;
+	transform: translateX(0);
+	font-size: 38px;
+	line-height: 1.5;
+}
+.hero__space {
+  margin-top: 60px;
+}
+
+/* メインフォト */
+.mainphoto {
+	& .mainphoto__img1 {
+		width: 240px;
+		height: auto;
+		top: 0;
+		left: 80px;
+		aspect-ratio: 1 / 1;
+	}
+	& .mainphoto__img2 {
+		width: 300px;
+		height: auto;
+		top: 30px;
+		right: 40px;
+	}
+	& .mainphoto__img3 {
+		width: 120px;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		top: auto;
+		bottom: 0;
+		left: 25%;
+	}
+}
+
+/* 最新情報 */
+.newsbox .mainbox__tophead {
+	order: 1;
+}
+.newsbox .news__list {
+	order: 2;
+}
+.news__item {
+	padding: 8px 0;
+}
+.newsbox .mainbox__rlink {
+	order: 3;
+}
+
+/* 右上リンク */
+.mainbox__rlink {
+	position: relative;
+	top: 0;
+	right: 0;
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+	padding: 20px 0 0 0;
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+
+	&::after {
+		position: static;
+		top: auto;
+		right: auto;
+		font-size: 18px;
+	}
+	
+	&:hover {
+		right: auto;
+	}
+}
+
+/* 谷津干潟とは */
+.topabout {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.aboutbox .topabout__main {
+	order: 2;
+	min-width: 0;
+}
+
+.topabout__text {
+	margin: 0 0 20px 0;
+	vertical-align: top;
+}
+.aboutbox .topabout__img {
+	order: 1;
+	flex: none;
+	width: 100%;
+	margin: 0 0 20px 0;
+	text-align: center;
+	
+	& img {
+		display: inline;
+		width: 80%;
+		aspect-ratio: 3 / 1;
+	}
+}
+
+.topabout__link {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto 0 auto;
+	gap: 24px;
+	
+	& a {
+		padding: 26px 0;		
+	}
+}
+
+/* 観察・散策ガイド */
+.topguide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+}
+
+.topguide__card {
+	display: block;
+	width: 100%;
+	padding: 0;
+	height: auto;
+	background-size: cover;
+}
+.topguide__link {
+	display: block;
+	width: 60%;
+	margin: 30px auto;
+	padding: 20px 0;
+	font-size: 16px;
+}
+
+/* アクセス */
+.accessbox .mainbox__rlink {
+	order: 2;
+}
+
+.topaccess {
+	order: 1;
+	flex-direction: column;
+	gap: 20px;
+}
+.topaccess__map {
+	flex: 1;
+	width: 100%;
+}
+
+	
+/**** お問い合わせ ****/
+.formbox {
+	position: relative;
+	margin: 0 45px 70px 45px;
+	padding: 30px 10%;
+	background: #fff;
+	border-radius: 4px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+
+/* ==========================================================================
+	全体レイアウト
+   ========================================================================== */
+
+/**** グローバルナビ ****/
+
+/* ロゴ */
+.sidebar__logo {
+	padding: 20px 0 10px 0;
+	text-align: center;
+}
+.sidebar__logo img {
+	width: 130px;
+}
+
+/* ハンバーガーボタンのスタイル */
+.sidebar__toggle {
+	width: 50px;
+	height: 50px;
+	gap: 6px;
+}
+.sidebar__toggle span {
+	display: block;
+	width: 28px;
+	height: 2px;
+}
+
+/* ×印アニメーション（is-open時） */
+.sidebar.is-open .sidebar__toggle span:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+.sidebar.is-open .sidebar__toggle span:nth-child(2) {
+	opacity: 0;
+}
+.sidebar.is-open .sidebar__toggle span:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/**** 基本ボックス ****/
+.mainbox {
+	margin: 20px 25px 40px 25px;
+}
+
+.mainbox__tophead {
+	margin: 0 0 30px 0;
+}
+.mainbox__rlink {
+	margin: 0;
+	padding: 20px 0 0 0;
+	font-size: 16px;
+}
+
+
+/**** 協力パートナー ****/
+.c-partner {
+	width: 90%;
+}
+.c-partner__head {
+	margin: 0 0 20px 0;
+}
+
+/* カード全体 */
+.c-partner__card {
+	flex-direction: column;
+	gap: 8px;
+}
+.c-partner__link {
+	& img {
+		aspect-ratio: 7/2;
+	}
+}
+
+/* 募集中 */
+.looking {
+	padding: 0;
+}
+.looking__box {
+	aspect-ratio: 7 / 2;
+}
+
+/* ==========================================================================
+	各ページCSS
+   ========================================================================== */
+
+/**** トップページ ****/
+
+/* 全体設定 */
+.hero-area {
+	height: 240px;
+	margin: 0 0 24px 0;
+	&::before {
+		right: 50px;
+    }
+}
+
+/* キャッチコピー */
+.hero__vertical {
+	margin: 0 auto;
+	transform: translateX(0);
+	font-size: 22px;
+	line-height: 1.5;
+}
+.hero__space {
+  margin-top: 60px;
+}
+
+/* メインフォト */
+.mainphoto {
+	& .mainphoto__img1 {
+		width: 120px;
+		height: auto;
+		top: 0;
+		left: 30px;
+		aspect-ratio: 1 / 1;
+	}
+	& .mainphoto__img2 {
+		width: 150px;
+		height: auto;
+		top: 30px;
+		right: 10px;
+	}
+	& .mainphoto__img3 {
+		width: 80px;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		top: auto;
+		bottom: 0;
+		left: 15%;
+	}
+}
+
+/* 最新情報 */
+.news__item {
+	padding: 4px 0;
+}
+.news__link {
+	padding: 6px 0;
+}
+.news__list time {
+	margin: 0 10px 0px 0;
+	}
+
+/* 谷津干潟について */
+.aboutbox .topabout__img {
+	& img {
+		display: inline;
+		width: 100%;
+		aspect-ratio: 3 / 1;
+	}
+}
+.topabout__link {
+	width: 100%;
+	gap: 18px;
+	margin: 20px auto 10px auto;
+}
+
+/* 周辺ガイド */
+.topguide__link {
+	width: 80%;
+	margin: 30px auto;
+	padding: 12px 0;
+}
+
+.topaccess__map iframe {
+	height: 180px;
+}
+
+/**** 保全・ルール */
+.point_img {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	
+	img {
+		flex: 1;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		aspect-ratio: 7 / 2;
+	}
+}
+
+/* お店一覧用Flex */
+.upage__flexshop {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: 0 0 50px 0;
+
+	& .upage__flexbox:nth-child(1) {
+		flex: 0 0 40%;
+	}
+	& .upage__flexbox:nth-child(2) {
+		flex: 1;
+	}
+}
+
+.upage__flexshop .upage__title--h3 {
+	margin: 0 0 20px 0;
+	font-size: 20px;
+}
+.upage__flexshop .upage__title--h4 {
+	margin: 0 0 10px 0;
+}
+
+}
