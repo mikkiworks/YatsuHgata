@@ -539,6 +539,11 @@ h1, h2, h3, h4, h5, h6 {
 	min-width: 0;
 	text-align: center;
 }
+.c-partner__card > li {
+	display: flex;
+	flex: 1;
+	min-width: 0;
+}
 
 /* リンク部分 */
 .c-partner__link {
@@ -896,10 +901,9 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	margin: 20px 0 5px 0;
 
-	& a {
+	& li {
 		display: block;
 		flex: 1;
-		padding: 20px 0;
 		min-width: 0;
 		border-radius: 3px;
 		border: 1px solid #A0D6FF;
@@ -917,6 +921,11 @@ h1, h2, h3, h4, h5, h6 {
 		&:hover {
 			background: var(--color-bg-base);
 		}
+	}
+	
+	& a {
+		display: block;
+		padding: 20px 0;
 	}
 }
 
@@ -965,6 +974,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ボタン部分 */
+.topguide li {
+	flex: 1; 
+	min-width: 0;
+	width: 100%;
+}
 .topguide__link {
 	display: block;
 	width: 82%;
