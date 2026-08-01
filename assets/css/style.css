@@ -538,6 +538,12 @@ h1, h2, h3, h4, h5, h6 {
 	gap: 30px;
 	min-width: 0;
 	text-align: center;
+
+	& > li {
+		display: flex;
+		flex: 1;
+		min-width: 0;
+	}
 }
 .c-partner__card > li {
 	display: flex;
@@ -921,6 +927,12 @@ h1, h2, h3, h4, h5, h6 {
 		&:hover {
 			background: var(--color-bg-base);
 		}
+		
+		& a {
+			display: block;
+			width: 100%;
+			padding: 20px 0;
+		}
 	}
 	
 	& a {
@@ -941,6 +953,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* カード全体 */
 .topguide__card {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -989,6 +1002,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 14px;
 	font-weight: bold;
 	color: #333;
+
+	/* カード全体をクリック領域にする */
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
 }
 
 
