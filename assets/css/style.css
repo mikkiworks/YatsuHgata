@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 .gnavi__engtxt {
 	display: block;
 	font-size: 0.7rem;
-	color: #8EC0E5;
+	color: var(--color-primary);
 	letter-spacing: 1.35px;
 }
 
@@ -206,16 +206,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ロゴ */
 .footer__logo {
 	display: block;
-	width: 150px;
+	width: 140px;
 	margin: auto;
 	
 	& img {
 		width: 100%;
 	}
-}
-
-.footer__logo {
-	width: 140px;
 }
 
 /* リンクリスト */
@@ -694,6 +690,7 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative;
 	overflow: hidden;
 	height: 730px;
+	
 	&::before {
 		content: "";
 		position: absolute;
@@ -705,7 +702,26 @@ h1, h2, h3, h4, h5, h6 {
 		border-radius: 50%;
 		pointer-events: none;
     }
+	
+	@media (max-width: 1200px) {
+		height: 400px;
+		margin: 0 0 40px 0;
+			
+		&::before {
+			top: 0;
+			right: 100px;
+		}
+	}
+	@media (max-width: 768px) {
+		height: 240px;
+		margin: 0 0 24px 0;
+			
+		&::before {
+			right: 50px;
+		}
+	}
 }
+
 .hero-image {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -722,9 +738,24 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Hannari", serif;
   letter-spacing: 0.15em;
   line-height: 1.8;
+	
+	@media (max-width: 1200px) {
+		margin: 0 auto;
+		transform: translateX(0);
+		font-size: 38px;
+		line-height: 1.5;
+	}
+	@media (max-width: 768px) {
+		font-size: 22px;
+	}
 }
+
 .hero__space {
   margin-top: 260px;
+
+	@media (max-width: 1200px) {
+		margin-top: 60px;
+	}
 }
 
 /* メインフォト */
@@ -1110,25 +1141,24 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /**** 保全・ルール ****/
-.point_img {
+.point {
 	display: flex;
 	gap: 40px;
 	width: 100%;
-	
-	img {
-		flex: 1;
-		min-width: 0;
-		width: 100%;
-		height: auto;
-		object-fit: contain;
-	}
+}
+.point__img {
+	flex: 1;
+	min-width: 0;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
-.rule-list {
+.rulelist {
 	margin-top: 2rem;
 	list-style: none; padding: 0;
 }
-.rule-list__item {
+.rulelist__item {
 	margin-bottom: 1.5rem;
 
 	& strong {
