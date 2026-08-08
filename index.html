@@ -33,7 +33,7 @@
 <header class="sidebar">
 
 	<!-- SP用ハンバーガーボタン -->
-	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="gnavi">
+	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnavi">
 		<span></span>
 		<span></span>
 		<span></span>
@@ -48,10 +48,10 @@
 	<nav class="gnavi dotted-line-btm" id="gnavi" aria-label="メインナビゲーション">
 
 		<!-- SP用満干時間 -->
-		<div class="tidearea sp">
-			<strong class="tidearea__title">今日(10月16日)の満干時間</strong>
-			<span class="tidearea__time">満潮　01:39／15:19</span>
-			<span class="tidearea__time">干潮　08:19／21:00</span>
+		<div class="tidearea sp" aria-live="polite">
+			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
+			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
+			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
 		</div>
 
 		<ul>
@@ -97,10 +97,10 @@
 
 	<!-- キービジュアル -->
 	<section class="hero-area">
-		<div class="tidearea pc">
-			<strong class="tidearea__title">今日(10月16日)の満干時間</strong>
-			<span class="tidearea__time">満潮　01:39／15:19</span>
-			<span class="tidearea__time">干潮　08:19／21:00</span>
+		<div class="tidearea pc" aria-live="polite">
+			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
+			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
+			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
 		</div>
 
 		<h1 class="hero__title hero__vertical">
@@ -126,23 +126,9 @@
 		<ul class="news__list">
 			<li class="news__item">
 				<a class="news__link" href="news/details.html">
-					<time datetime="2025-05-17">2025年5月17日 (土)</time>
-					<span class="news__cat">イベント</span>
-					<h3 class="news__title">「谷津干潟を知ろう」第35期ボランティア入門講座</h3>
-				</a>
-			</li>
-			<li class="news__item">
-				<a class="news__link" href="news/details.html">
-					<time datetime="2025-05-17">2025年5月17日 (土)</time>
+					<time datetime="2026-08-07">2026年8月7日（金）</time>
 					<span class="news__cat">お知らせ</span>
-					<h3 class="news__title">「谷津干潟を知ろう」第35期ボランティア入門講座</h3>
-				</a>
-			</li>
-			<li class="news__item">
-				<a class="news__link" href="news/details.html">
-					<time datetime="2025-05-17">2025年5月17日 (土)</time>
-					<span class="news__cat">イベント</span>
-					<h3 class="news__title">「谷津干潟を知ろう」第35期ボランティア入門講座</h3>
+					<h3 class="news__title">谷津干潟ナビを公開しました！</h3>
 				</a>
 			</li>
 		</ul>
@@ -313,6 +299,7 @@
 		<li class="footer__item"><a href="contact/index.html">お問い合わせ</a></li>
 	</ul>
 	</nav>
+	<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>
 	<small class="footer__copy">Copyright &copy; YATSUHIGATA NAVI. All rights reserved.</small>
 </footer>
 

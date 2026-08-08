@@ -20,51 +20,61 @@
 
 <!-- サイドバー/ハンバーガーメニュー -->
 <header class="sidebar">
-		
+
 	<!-- SP用ハンバーガーボタン -->
-	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開閉する">
+	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnavi">
 		<span></span>
 		<span></span>
 		<span></span>
 	</button>
 
 	<!-- ロゴ -->
-	<div>
-		<a href="../index.html" class="sidebar__logo">
-			<img class="logo__item" src="../assets/images/logo.png" alt="谷津干潟ナビのロゴ">
-		</a>
-	</div>
+	<a href="../index.html" class="sidebar__logo">
+		<img class="logo__item" src="../assets/images/logo.png" alt="谷津干潟ナビ">
+	</a>
 
 	<!-- グローバルナビ -->
-	<nav class="gnavi dotted-line-btm">
-		
+	<nav class="gnavi dotted-line-btm" id="gnavi" aria-label="メインナビゲーション">
+
 		<!-- SP用満干時間 -->
-		<div class="tidearea sp">
-			<strong class="tidearea__title">今日(10月16日)の干潮時間</strong>
-			<span class="tidearea__time">満潮　01:39／15:19</span>
-			<span class="tidearea__time">干潮　08:19／21:00</span>
+		<div class="tidearea sp" aria-live="polite">
+			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
+			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
+			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
 		</div>
 
-		<a href="../news/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">NEWS</span>
-			最新情報
-		</a>
-		<a href="../about/index.html" class="gnavi__item active">
-			<span class="gnavi__item__eng">ABOUT</span>
-			谷津干潟とは
-		</a>
-		<a href="../guide/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">GUIDE</span>
-			観察・散策ガイド
-		</a>
-		<a href="../access/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">ACCESS</span>
-			アクセス
-		</a>
-		<a href="../contact/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">CONTACT</span>
-			お問い合わせ
-		</a>
+		<ul>
+			<li>
+				<a href="../news/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">NEWS</span>
+					最新情報
+				</a>
+			</li>
+			<li>
+				<a href="../about/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">ABOUT</span>
+					谷津干潟とは
+				</a>
+			</li>
+			<li>
+				<a href="../guide/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">GUIDE</span>
+					観察・散策ガイド
+				</a>
+			</li>
+			<li>
+				<a href="../access/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">ACCESS</span>
+					アクセス
+				</a>
+			</li>
+			<li>
+				<a href="../contact/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">CONTACT</span>
+					お問い合わせ
+				</a>
+			</li>
+		</ul>
 	</nav>
 </header>
 
@@ -77,14 +87,14 @@
 	<!-- コンテンツ全体 -->
 	<div class="upage">
 		<h1 class="upage__title">
-			<span class="upage__title-eng">For Local Businesses</span>
+			<span class="upage__title--eng">For Local Businesses</span>
 			地域のお店・事業者の方へ
 		</h1>
 
 		<article class="upage__box">
 	
 			<section class="upage__section">
-				<h2 class="upage__title-h2">谷津干潟の魅力と一緒に、あなたのお店・活動を発信しませんか？</h2>
+				<h2 class="upage__title--h2">谷津干潟の魅力と一緒に、あなたのお店・活動を発信しませんか？</h2>
 				<p class="upage__text">
 					「谷津干潟ナビ」は、習志野市・谷津干潟エリアを訪れる観光客や野鳥観察に訪れる方、地域住民に向けた個人運営のローカルメディアです。
 				</p>
@@ -94,15 +104,15 @@
 			</section>
 
 			<section class="upage__section">
-				<h2 class="upage__title-h2">掲載のメリット</h2>
-				<h3 class="upage__title-h3">①谷津干潟を訪れる「おでかけ層」へ直接アプローチ</h3>
+				<h2 class="upage__title--h2">掲載のメリット</h2>
+				<h3 class="upage__title--h3">①谷津干潟を訪れる「おでかけ層」へ直接アプローチ</h3>
 				<p class="upage__text">
 					散策・野鳥観察の前後に「ランチやカフェを探している人」「お土産を買いたい人」へピンポイントで情報を届けられます。
 				</p>
-				<h3 class="upage__title-h3">②サイト内および周辺マップで魅力的にご紹介</h3>
+				<h3 class="upage__title--h3">②サイト内および周辺マップで魅力的にご紹介</h3>
 				<p class="upage__text">
 					店舗の基本情報（営業時間・アクセス・SNS等）に加え、おすすめメニューやお店のこだわりを写真付きでわかりやすく紹介します。				</p>
-				<h3 class="upage__title-h3">③無料で気軽に参加・掲載可能</h3>
+				<h3 class="upage__title--h3">③無料で気軽に参加・掲載可能</h3>
 				<p class="upage__text">
 					個人運営の地域貢献メディアのため、基本掲載料は無料（※初期運用フェーズ）です。まずはお気軽にお店や活動の紹介としてご活用いただけます。<br>
 				</p>
@@ -113,7 +123,7 @@
 			</section>
 			
 			<section class="upage__section">
-				<h2 class="upage__title-h2">対象となる事業者様（例）</h2>
+				<h2 class="upage__title--h2">対象となる事業者様（例）</h2>
 				<ul class="upage__list">
 					<li class="upage__list-item">飲食店・カフェ・和洋菓子店（散策のランチ・カフェ・食べ歩きスポット）</li>
 					<li class="upage__list-item">雑貨店・園芸店・専門店（お買い物・お土産スポット）</li>
@@ -124,30 +134,30 @@
 			</section>
 			
 			<section class="upage__section">
-				<h2 class="upage__title-h2">4. 掲載までの流れ（3ステップ）</h2>
-				<h3 class="upage__title-h3">Step 1: お問い合わせ</h3>
+				<h2 class="upage__title--h2">4. 掲載までの流れ（3ステップ）</h2>
+				<h3 class="upage__title--h3">Step 1: お問い合わせ</h3>
 				<p class="upage__text">お問い合わせフォームよりご連絡ください。</p>
-				<h3 class="upage__title-h3">Step 2: 内容の確認・ヒアリング</h3>
+				<h3 class="upage__title--h3">Step 2: 内容の確認・ヒアリング</h3>
 				<p class="upage__text">メールまたは簡易的なやり取りにて、掲載したい情報を確認させていただきます。</p>
-				<h3 class="upage__title-h3">Step 3: ページ掲載スタート</h3>
+				<h3 class="upage__title--h3">Step 3: ページ掲載スタート</h3>
 				<p class="upage__text">掲載完了後、ご連絡いたします。内容の修正や更新も随時承ります。</p>
 			</section>
 			
 			<section class="upage__section">
-				<h2 class="upage__title-h2">5. よくあるご質問（FAQ）</h2>
-				<h3 class="upage__title-h3">Q. 掲載にお金はかかりますか？</h3>
+				<h2 class="upage__title--h2">5. よくあるご質問（FAQ）</h2>
+				<h3 class="upage__title--h3">Q. 掲載にお金はかかりますか？</h3>
 				<p class="upage__text">
 					いいえ、掲載費・月額費用などは一切かかりません。完全無料でご利用いただけます。谷津干潟周辺の魅力を多くの方に知っていただくための地域メディアですので、どうぞ気軽にご活用ください。<br>
 					ただ、いずれは有料オプション(メインビジュアル部分に掲載)なども考えております。
 				</p>
-				<h3 class="upage__title-h3">
+				<h3 class="upage__title--h3">
 					Q. 写真や原稿を用意するのが難しいのですが…
 				</h3>
 				<p class="upage__text">
 					公式SNSやホームページの情報、または店主様への簡単なヒアリングをもとにこちらで構成案を作成することも可能ですのでご安心ください。
-					写真も撮影いたします、
+					写真も撮影いたします。
 				</p>
-				<h3 class="upage__title-h3">Q. ホームページの作成を依頼できますか？</h3>
+				<h3 class="upage__title--h3">Q. ホームページの作成を依頼できますか？</h3>
 				<p class="upage__text">
 					可能です。企画や要件定義などからデザイン、コーディング、CMS実装、マーケティング支援まで丸ごと対応可能ですので、まずはお気軽にご相談ください。
 				</p>
@@ -156,26 +166,32 @@
 	</div>
 
 	<!-- 協力パートナー -->
-	<section class="c-partner">
+		<section class="c-partner">
 		<h2 class="c-partner__head">
 			<span class="c-partner__head-eng">PARTNER</span>
 			協力パートナー
 		</h2>
-		<!-- 3カード -->
-		<div class="c-partner__card">
-			<a href="../partner/details.html" class="c-partner__link">
-				<img src="../assets/images/kv01.png" alt="商店街の景色">
-				店舗名店舗名
-			</a>
-			<a href="../partner/details.html" class="c-partner__link">
-				<img src="../assets/images/kv01.png" alt="商店街の景色">
-				店舗名店舗名
-			</a>
-			<a href="../partner/details.html" class="c-partner__link">
-				<img src="../assets/images/kv01.png" alt="商店街の景色">
-				店舗名店舗名
-			</a>
-		</div>
+
+		<ul class="c-partner__card">
+			<li>
+				<a href="../partner/index.html" class="c-partner__link">
+					<img src="../assets/images/kv01.png" alt="店舗名(仮)">
+					<h3>店舗名店舗名(仮)</h3>
+				</a>
+			</li>
+			<li>
+				<a href="../partner/index.html" class="c-partner__link">
+					<img src="../assets/images/kv01.png" alt="店舗名(仮)">
+					<h3>店舗名店舗名(仮)</h3>
+				</a>
+			</li>
+			<li>
+				<a href="../partner/index.html" class="c-partner__link">
+					<img src="../assets/images/kv01.png" alt="店舗名(仮)">
+					<h3>店舗名店舗名(仮)</h3>
+				</a>
+			</li>
+		</ul>
 
 		<p class="c-partner__text">
 			谷津干潟周辺のお店・企業・活動団体の情報を掲載できます。<br>
@@ -187,16 +203,19 @@
 </main>
 	
 <footer class="footer">
-	<a href="/" class="footer__logo">
-		<img src="../assets/images/logo.png" alt="谷津干潟ナビのロゴ">
+	<a href="../index.html" class="footer__logo">
+		<img src="../assets/images/logo.png" alt="谷津干潟ナビ">
 	</a>
+	<nav aria-label="フッターナビゲーション">
 	<ul class="footer__list">
-		<li class="footer_list-item"><a href="../about/master.html">管理人について</a></li>
-		<li class="footer_list-item"><a href="../partner/index.html">地域のお店・事業者の方へ</a></li>
-		<li class="footer_list-item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
-		<li class="footer_list-item"><a href="../contact/index.html">お問い合わせ</a></li>
+		<li class="footer__item"><a href="../about/master.html">管理人について</a></li>
+		<li class="footer__item"><a href="../partner/index.html">地域のお店・事業者の方へ</a></li>
+		<li class="footer__item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
+		<li class="footer__item"><a href="../contact/index.html">お問い合わせ</a></li>
 	</ul>
-	<p class="footer__copy">Copyright  &copy; YATUHIGATA NAVI. All rights reserved.</p>
+	</nav>
+	<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>
+	<small class="footer__copy">Copyright &copy; YATSUHIGATA NAVI. All rights reserved.</small>
 </footer>
 
 </div>

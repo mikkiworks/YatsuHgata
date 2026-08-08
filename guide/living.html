@@ -21,49 +21,59 @@
 <header class="sidebar">
 
 	<!-- SP用ハンバーガーボタン -->
-	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開閉する">
+	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnavi">
 		<span></span>
 		<span></span>
 		<span></span>
 	</button>
 
 	<!-- ロゴ -->
-	<div>
-		<a href="../index.html" class="sidebar__logo">
-			<img class="logo__item" src="../assets/images/logo.png" alt="谷津干潟ナビのロゴ">
-		</a>
-	</div>
+	<a href="../index.html" class="sidebar__logo">
+		<img class="logo__item" src="../assets/images/logo.png" alt="谷津干潟ナビ">
+	</a>
 
 	<!-- グローバルナビ -->
-	<nav class="gnavi dotted-line-btm">
-		
+	<nav class="gnavi dotted-line-btm" id="gnavi" aria-label="メインナビゲーション">
+
 		<!-- SP用満干時間 -->
-		<div class="tidearea sp">
-			<strong class="tidearea__title">今日(10月16日)の干潮時間</strong>
-			<span class="tidearea__time">満潮　01:39／15:19</span>
-			<span class="tidearea__time">干潮　08:19／21:00</span>
+		<div class="tidearea sp" aria-live="polite">
+			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
+			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
+			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
 		</div>
-			
-		<a href="../news/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">NEWS</span>
-			最新情報
-		</a>
-		<a href="index.html" class="gnavi__item active">
-			<span class="gnavi__item__eng">ABOUT</span>
-			谷津干潟とは
-		</a>
-		<a href="../guide/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">GUIDE</span>
-			観察・散策ガイド
-		</a>
-		<a href="../access/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">ACCESS</span>
-			アクセス
-		</a>
-		<a href="../contact/index.html" class="gnavi__item">
-			<span class="gnavi__item__eng">CONTACT</span>
-			お問い合わせ
-		</a>
+
+		<ul>
+			<li>
+				<a href="../news/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">NEWS</span>
+					最新情報
+				</a>
+			</li>
+			<li>
+				<a href="../about/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">ABOUT</span>
+					谷津干潟とは
+				</a>
+			</li>
+			<li>
+				<a href="../guide/index.html" class="gnavi__item active" aria-current="page">
+					<span class="gnavi__engtxt">GUIDE</span>
+					観察・散策ガイド
+				</a>
+			</li>
+			<li>
+				<a href="../access/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">ACCESS</span>
+					アクセス
+				</a>
+			</li>
+			<li>
+				<a href="../contact/index.html" class="gnavi__item">
+					<span class="gnavi__engtxt">CONTACT</span>
+					お問い合わせ
+				</a>
+			</li>
+		</ul>
 	</nav>
 </header>
 
@@ -82,14 +92,14 @@
 	<!-- メイン部分 -->
 	<div class="upage">
 		<h1 class="upage__title">
-			<span class="upage__title-eng">Seasonal Wildlife</span>
+			<span class="upage__title--eng">Seasonal Wildlife</span>
 			季節の生きもの
 		</h1>
 
 		<article class="upage__box">
 	
 			<section class="upage__section">
-				<h2 class="upage__title-h2">四季折々に姿を変える谷津干潟の生命</h2>
+				<h2 class="upage__title--h2">四季折々に姿を変える谷津干潟の生命</h2>
 				<p class="upage__text">
 					世界的な渡り鳥の中継地である谷津干潟では、春と秋の渡りの季節、夏の子育て、冬の越冬と、季節ごとにまったく異なる生きものたちとの出会いがあります。<br>
 					鳥だけでなく、足元の泥の中に息づく小さな生命にも目を向けてみると、干潟の豊かな生態系が見えてきます。
@@ -97,8 +107,8 @@
 			</section>
 
 			<section class="upage__section">
-				<h3 class="upage__title-h3">春（3月〜5月）</h3>
-				<h4 class="upage__title-h4">旅の途中に立ち寄る「旅鳥」たちのレストステーション</h4>
+				<h3 class="upage__title--h3">春（3月〜5月）</h3>
+				<h4 class="upage__title--h4">旅の途中に立ち寄る「旅鳥」たちのレストステーション</h4>
 				<p class="upage__text point">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
@@ -115,8 +125,8 @@
 			</section>
 
 			<section class="upage__section">
-				<h3 class="upage__title-h3">夏（6月〜8月）</h3>
-				<h4 class="upage__title-h4">生命力あふれる夏の干潟と、子育てに励む水鳥たち</h4>
+				<h3 class="upage__title--h3">夏（6月〜8月）</h3>
+				<h4 class="upage__title--h4">生命力あふれる夏の干潟と、子育てに励む水鳥たち</h4>
 				<p class="upage__text point">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
@@ -133,8 +143,8 @@
 			</section>
 
 			<section class="upage__section">
-				<h3 class="upage__title-h3">秋（9月〜11月）</h3>
-				<h4 class="upage__title-h4">再び訪れる旅の季節と、冬越しに向けた準備</h4>
+				<h3 class="upage__title--h3">秋（9月〜11月）</h3>
+				<h4 class="upage__title--h4">再び訪れる旅の季節と、冬越しに向けた準備</h4>
 				<p class="upage__text point">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
@@ -151,8 +161,8 @@
 			</section>
 
 			<section class="upage__section">
-				<h3 class="upage__title-h3">冬（12月〜2月）</h3>
-				<h4 class="upage__title-h4">澄んだ空気の中、北の国からやってくる「カモ達の冬越し」</h4>
+				<h3 class="upage__title--h3">冬（12月〜2月）</h3>
+				<h4 class="upage__title--h4">澄んだ空気の中、北の国からやってくる「カモ達の冬越し」</h4>
 				<p class="upage__text point">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
 					<img src="../assets/images/kv01.png" class="point__img" alt="東側道路沿いの地図">
@@ -169,8 +179,8 @@
 			</section>
 
 			<section class="upage__section">
-				<h3 class="upage__title-h3">その他</h3>
-				<h4 class="upage__title-h4">干潟の「名わき役」たち</h4>
+				<h3 class="upage__title--h3">その他</h3>
+				<h4 class="upage__title--h4">干潟の「名わき役」たち</h4>
 				<p class="upage__text point">
 					<img src="../assets/images/kv01.png" class="point__img" alt="">
 					<img src="../assets/images/kv01.png" class="point__img" alt="カニ">
@@ -195,27 +205,32 @@
 	</div>
 
 	<!-- 協力パートナー -->
-	<section class="c-partner">
-
+		<section class="c-partner">
 		<h2 class="c-partner__head">
 			<span class="c-partner__head-eng">PARTNER</span>
 			協力パートナー
 		</h2>
-	
-		<div class="c-partner__card">
-			<a href="../partner/details.html" class="c-partner__link">
-				<img src="../assets/images/kv01.png" alt="商店街の景色">
-				店舗名店舗名
-			</a>
-			<a href="../partner/details.html" class="c-partner__link">
-				<img src="../assets/images/kv01.png" alt="商店街の景色">
-				店舗名店舗名
-			</a>
-			<a href="../partner/details.html" class="c-partner__link">
-				<img src="../assets/images/kv01.png" alt="商店街の景色">
-				店舗名店舗名店舗名
-			</a>
-		</div>
+
+		<ul class="c-partner__card">
+			<li>
+				<a href="../partner/index.html" class="c-partner__link">
+					<img src="../assets/images/kv01.png" alt="店舗名(仮)">
+					<h3>店舗名店舗名(仮)</h3>
+				</a>
+			</li>
+			<li>
+				<a href="../partner/index.html" class="c-partner__link">
+					<img src="../assets/images/kv01.png" alt="店舗名(仮)">
+					<h3>店舗名店舗名(仮)</h3>
+				</a>
+			</li>
+			<li>
+				<a href="../partner/index.html" class="c-partner__link">
+					<img src="../assets/images/kv01.png" alt="店舗名(仮)">
+					<h3>店舗名店舗名(仮)</h3>
+				</a>
+			</li>
+		</ul>
 
 		<p class="c-partner__text">
 			谷津干潟周辺のお店・企業・活動団体の情報を掲載できます。<br>
@@ -227,16 +242,19 @@
 </main>
 
 <footer class="footer">
-	<a href="/" class="footer__logo">
-		<img src="../assets/images/logo.png" alt="谷津干潟ナビのロゴ">
+	<a href="../index.html" class="footer__logo">
+		<img src="../assets/images/logo.png" alt="谷津干潟ナビ">
 	</a>
+	<nav aria-label="フッターナビゲーション">
 	<ul class="footer__list">
-		<li class="footer_list-item"><a href="../about/master.html">管理人について</a></li>
-		<li class="footer_list-item"><a href="../partner/index.html">地域のお店・事業者の方へ</a></li>
-		<li class="footer_list-item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
-		<li class="footer_list-item"><a href="../contact/index.html">お問い合わせ</a></li>
+		<li class="footer__item"><a href="../about/master.html">管理人について</a></li>
+		<li class="footer__item"><a href="../partner/index.html">地域のお店・事業者の方へ</a></li>
+		<li class="footer__item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
+		<li class="footer__item"><a href="../contact/index.html">お問い合わせ</a></li>
 	</ul>
-	<p class="footer__copy">Copyright  &copy; YATUHIGATA NAVI.  All rights reserved.</p>
+	</nav>
+	<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>
+	<small class="footer__copy">Copyright &copy; YATSUHIGATA NAVI. All rights reserved.</small>
 </footer>
 
 </div>

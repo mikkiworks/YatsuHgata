@@ -41,13 +41,20 @@
 	width: 100%;
 	height: 100dvh;
 	background: #fff;
-	transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		right 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+		visibility 0s linear 0.5s;
 	overflow-y: auto;
 }
 
 /* メニュー開く状態（is-openクラス付与時） */
 .sidebar.is-open .gnavi {
 	right: 0;
+	visibility: visible;
+	pointer-events: auto;
+	transition-delay: 0s;
 }
 .gnavi .tidearea {
 	position: relative;
