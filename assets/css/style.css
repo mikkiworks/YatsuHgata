@@ -559,6 +559,11 @@ h1, h2, h3, h4, h5, h6 {
 	min-width: 0;
 }
 
+.c-partner__card > li,
+.c-partner__card > .c-partner__link {
+	max-width: calc((100% - 60px) / 3);
+}
+
 /* リンク部分 */
 .c-partner__link {
 	display: flex;
@@ -586,6 +591,24 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+/* パートナー募集中 */
+.looking {
+	padding: 0;
+}
+
+.looking__box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	border-radius: 6px;
+	background: #e5e5e5;
+	color: #555;
+	font-size: 18px;
+	font-weight: bold;
+}
+
 .c-partner__text {
 	display: block;
 	margin: 30px 0 0 0;
@@ -602,12 +625,19 @@ h1, h2, h3, h4, h5, h6 {
 .c-breadcrumb__list {
 	display: flex;
 	margin: 10px 5% 10px 5%;
+	@media (max-width: 1200px) {
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
 }
 
 .c-breadcrumb__item {
 	margin: 0 10px 0 0;
 	padding: 0 0 0 0;
 	font-size: 13px;
+	@media (max-width: 1200px) {
+		font-size: 12px;
+	}
 }
 
 .c-breadcrumb__link {
@@ -813,6 +843,10 @@ h1, h2, h3, h4, h5, h6 {
 		display: block;
 		margin: 0 0 8px 0;
 		text-align: right;
+		
+		@media (max-width: 1200px) {
+			text-align: center;
+		}
 	}
 
 	& .tidearea__time {
@@ -1102,8 +1136,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /**** 歴史 ****/
 .history {
+	position: relative;
 	padding: 0 0 30px 30px;
 	border-left: 1px solid #D9EAF8;
+}
+
+.history::before {
+	position: absolute;
+	top: 1px;
+	left: 0;
+	width: 10px;
+	height: 10px;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	background-color: #D9EAF8;
+	content: "";
 }
 
 /* 見出し */
@@ -1112,13 +1159,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 20px 0;
 	line-height: 1;
 	font-size: 22px;
-	
-	&::before {
-		position: absolute;
-		left: -42px;
-		content: "●";
-		color: #D9EAF8;
-	}
 }
 .history .upage__title--h2 span {
 	display: block;

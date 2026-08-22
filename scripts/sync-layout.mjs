@@ -104,7 +104,7 @@ function renderFooter() {
 		'\t<nav aria-label="フッターナビゲーション">',
 		'\t<ul class="footer__list">',
 		'\t\t<li class="footer__item"><a href="../about/master.html">管理人について</a></li>',
-		'\t\t<li class="footer__item"><a href="../partner/index.html">地域のお店・事業者の方へ</a></li>',
+		'\t\t<li class="footer__item"><a href="../partner/index.html">協力パートナー募集</a></li>',
 		'\t\t<li class="footer__item"><a href="../privacy/index.html">プライバシーポリシー</a></li>',
 		'\t\t<li class="footer__item"><a href="../contact/index.html">お問い合わせ</a></li>',
 		'\t</ul>',

@@ -287,6 +287,10 @@
 	flex-direction: column;
 	gap: 0;
 }
+.c-partner__card > li,
+.c-partner__card > .c-partner__link {
+	max-width: none;
+}
 
 /* リンク部分 */
 .c-partner__link {
@@ -438,7 +442,11 @@
 	width: 100%;
 	padding: 0;
 	height: auto;
-	background-size: cover;
+	background-position: center;
+	
+	&:nth-child(1),&:nth-child(2),&:nth-child(3) {
+		background-size: cover;
+	}
 }
 .topguide__link {
 	display: block;
@@ -514,6 +522,49 @@
 }
 .sidebar.is-open .sidebar__toggle span:nth-child(3) {
 	transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/**** フッター ****/
+.footer__list {
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	margin: 10px auto 24px auto;
+}
+
+.footer__list a {
+	display: inline-block;
+	padding: 0;
+}
+
+.footer__item {
+	flex: none;
+	width: 100%;
+	border-right: none;
+	line-height: 1.5;
+}
+
+
+/**** パンくず ****/
+.c-breadcrumb__list {
+	flex-wrap: wrap;
+	row-gap: 6px;
+}
+
+.c-breadcrumb__item {
+	line-height: 1.6;
+}
+
+
+/**** 歴史ページタイトル ****/
+.history__page-title {
+	line-height: 1.35;
+	font-size: 26px;
+}
+
+.history__title-line {
+	display: block;
 }
 
 
