@@ -4,14 +4,6 @@
 	全体レイアウト
    ========================================================================== */
 
-.pc { display: none; }
-.sp { display: block; }
-
-/* 縦並びに切り替え */
-.wrapper {
-	flex-direction: column;
-}
-
 /**** グローバルナビ ****/
 .sidebar {
 	width: 100%;
@@ -569,9 +561,6 @@
 
 
 /**** 基本ボックス ****/
-.mainbox {
-	margin: 20px 25px 40px 25px;
-}
 
 .mainbox__tophead {
 	margin: 0 0 30px 0;
