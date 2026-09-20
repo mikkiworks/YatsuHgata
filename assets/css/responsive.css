@@ -1,125 +1,5 @@
 @media (max-width: 1200px) {
 
-/* ==========================================================================
-	全体レイアウト
-   ========================================================================== */
-
-/**** グローバルナビ ****/
-.sidebar {
-	width: 100%;
-	height: auto;
-	position: relative;
-	padding: 0 0 0 0;
-	z-index: 1000;
-	background: none;
-	border: none;
-	overflow: visible;
-}
-
-/* ロゴ */
-.sidebar__logo {
-	padding: 30px 0 20px 0;
-	text-align: center;
-}
-.sidebar__logo img {
-	width: 160px;
-}
-
-/* ハンバーガーメニュー */
-.gnavi {
-	position: fixed;
-	top: 0;
-	right: -100%;
-	width: 100%;
-	height: 100dvh;
-	background: #fff;
-	visibility: hidden;
-	pointer-events: none;
-	transition:
-		right 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-		visibility 0s linear 0.5s;
-	overflow-y: auto;
-}
-
-/* メニュー開く状態（is-openクラス付与時） */
-.sidebar.is-open .gnavi {
-	right: 0;
-	visibility: visible;
-	pointer-events: auto;
-	transition-delay: 0s;
-}
-.gnavi .tidearea {
-	position: relative;
-	top: 0;
-	left: 0;
-	padding: 30px 0 60px 0;
-	z-index: 100;
-	text-align: center;
-}
-.gnavi .tidearea__time {
-	text-align: center;
-}
-
-/* ハンバーガーボタンのスタイル */
-.sidebar__toggle {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 70px;
-	height: 70px;
-	background: #D6E8F6;
-	border: none;
-	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 8px;
-	z-index: 1001;
-}
-
-.sidebar__toggle span {
-	width: 40px;
-	height: 2px;
-	background-color: #333;
-	transition: all 0.3s ease;
-}
-
-/* ×印アニメーション（is-open時） */
-.sidebar.is-open .sidebar__toggle span:nth-child(1) {
-	transform: translateY(12px) rotate(45deg);
-}
-.sidebar.is-open .sidebar__toggle span:nth-child(2) {
-	opacity: 0;
-}
-.sidebar.is-open .sidebar__toggle span:nth-child(3) {
-	transform: translateY(-8px) rotate(-45deg);
-}
-
-/**** コンテンツエリア ****/
-.main-container {
-	margin-top: 20px;
-}
-
-/**** 基本ボックス ****/
-.mainbox {
-	margin: 20px 40px 40px 40px;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-}
-
-.mainbox__tophead {
-	margin: 10px 0 40px 0;
-	font-size: 18px;
-	text-align: center;
-	
-	& .mainbox__tophead-eng {
-		margin: 0 0 6px 0;
-		font-size: 14px;
-	}
-}
-
 /**** フッター ****/
 .footer__logo {
 	width: 120px;
@@ -243,13 +123,6 @@
     コンポーネント 
    ========================================================================== */
 
-/**** 一覧リスト ****/
-.news__list {
-	order: 2;
-	margin: -20px 0 0 ;
-	font-size: 16px;
-}
-
 /**** 協力パートナー ****/
 .c-partner {
 	width: 80%;
@@ -313,100 +186,7 @@
 
 /**** トップページ ****/
 
-/* メインフォト */
-.mainphoto {
-	& .mainphoto__img1 {
-		width: 240px;
-		height: auto;
-		top: 0;
-		left: 80px;
-		aspect-ratio: 1 / 1;
-	}
-	& .mainphoto__img2 {
-		width: 300px;
-		height: auto;
-		top: 30px;
-		right: 40px;
-	}
-	& .mainphoto__img3 {
-		width: 120px;
-		height: auto;
-		aspect-ratio: 1 / 1;
-		top: auto;
-		bottom: 0;
-		left: 25%;
-	}
-}
-
-/* 最新情報 */
-.newsbox .mainbox__tophead {
-	order: 1;
-}
-.newsbox .news__list {
-	order: 2;
-}
-.news__item {
-	padding: 8px 0;
-}
-.newsbox .mainbox__rlink {
-	order: 3;
-}
-
-/* 右上リンク */
-.mainbox__rlink {
-	position: relative;
-	top: 0;
-	right: 0;
-	margin: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 4px;
-	padding: 20px 0 0 0;
-	text-align: center;
-	font-size: 18px;
-	color: #333;
-
-	&::after {
-		position: static;
-		top: auto;
-		right: auto;
-		font-size: 18px;
-	}
-	
-	&:hover {
-		right: auto;
-	}
-}
-
 /* 谷津干潟とは */
-.topabout {
-	display: flex;
-	flex-direction: column;
-	gap: 0;
-}
-.aboutbox .topabout__main {
-	order: 2;
-	min-width: 0;
-}
-
-.topabout__text {
-	margin: 0 0 20px 0;
-	vertical-align: top;
-}
-.aboutbox .topabout__img {
-	order: 1;
-	flex: none;
-	width: 100%;
-	margin: 0 0 20px 0;
-	text-align: center;
-	
-	& img {
-		display: inline;
-		width: 80%;
-		aspect-ratio: 3 / 1;
-	}
-}
 
 .topabout__link {
 	display: flex;
@@ -481,17 +261,6 @@
 /* ==========================================================================
 	全体レイアウト
    ========================================================================== */
-
-/**** グローバルナビ ****/
-
-/* ロゴ */
-.sidebar__logo {
-	padding: 20px 0 10px 0;
-	text-align: center;
-}
-.sidebar__logo img {
-	width: 130px;
-}
 
 /* ハンバーガーボタンのスタイル */
 .sidebar__toggle {
@@ -605,41 +374,7 @@
 
 /**** トップページ ****/
 
-/* メインフォト */
-.mainphoto {
-	& .mainphoto__img1 {
-		width: 120px;
-		height: auto;
-		top: 0;
-		left: 30px;
-		aspect-ratio: 1 / 1;
-	}
-	& .mainphoto__img2 {
-		width: 150px;
-		height: auto;
-		top: 30px;
-		right: 10px;
-	}
-	& .mainphoto__img3 {
-		width: 80px;
-		height: auto;
-		aspect-ratio: 1 / 1;
-		top: auto;
-		bottom: 0;
-		left: 15%;
-	}
-}
 
-/* 最新情報 */
-.news__item {
-	padding: 4px 0;
-}
-.news__link {
-	padding: 6px 0;
-}
-.news__list time {
-	margin: 0 10px 0px 0;
-	}
 
 /* 谷津干潟について */
 .aboutbox .topabout__img {

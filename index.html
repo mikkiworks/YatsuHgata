@@ -96,36 +96,36 @@
 <main class="main">
 
 	<!-- キービジュアル -->
-	<section class="hero-area">
+	<section class="topvisual">
 		<div class="tidearea pc" aria-live="polite">
 			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
 			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
 			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
 		</div>
 
-		<h1 class="hero__title hero__vertical">
+		<h1 class="topvisual__title">
 			街のすぐそばにある<br>
-			<span class="hero__space">豊かな自然</span>
+			<span class="topvisual__space">豊かな自然</span>
 		</h1>
 
-		<div class="mainphoto">
-			<img class="mainphoto__img1" src="assets/images/kv01.png" alt="谷津干潟のアオアシ">
-			<img class="mainphoto__img2" src="assets/images/kv02.png" alt="谷津干潟の全体風景">
-			<img class="mainphoto__img3" src="assets/images/kv03.png" alt="谷津干潟の紅葉">
+		<div class="topvisual__photo">
+			<img class="topvisual__photo1" src="assets/images/living_heron.jpg" alt="谷津干潟のアオサギ">
+			<img class="topvisual__photo2" src="assets/images/kv02.png" alt="谷津干潟の全体風景">
+			<img class="topvisual__photo3" src="assets/images/kv03.png" alt="谷津干潟の紅葉">
 		</div>
 	</section>
 
 	<!-- 最新情報 -->
-	<section class="content newsbox">
-		<h2 class="mainbox__tophead">
-			<span class="mainbox__tophead-eng">NEWS</span>
+	<section class="topblock">
+		<h2 class="topblock__title">
+			<span class="topblock__eng">NEWS</span>
 			最新情報
 		</h2>
-		<a class="mainbox__rlink" href="news/index.html">最新情報一覧</a>
+		<a class="topblock__rlink" href="news/index.html">最新情報一覧</a>
 
 		<ul class="news__list">
 			<li class="news__item">
-				<a class="news__link" href="news/details.html">
+				<a href="news/details.html">
 					<time datetime="2026-08-07">2026年8月7日（金）</time>
 					<span class="news__cat">お知らせ</span>
 					<h3 class="news__title">谷津干潟ナビを公開しました！</h3>
@@ -135,21 +135,32 @@
 	</section>
 
 	<!-- 谷津干潟とは -->
-	<section class="content aboutbox">
-		<h2 class="mainbox__tophead">
-			<span class="mainbox__tophead-eng">ABOUT</span>
+	<section class="topblock">
+		<h2 class="topblock__title">
+			<span class="topblock__eng">ABOUT</span>
 			谷津干潟とは
 		</h2>
 
 		<div class="topabout">
-			<div class="topabout__main">
-				<p class="topabout__text"><strong>都会に残された、身近で貴重な自然</strong></p>
-				<p class="topabout__text">ラムサール条約に登録され、世界的な渡り鳥の中継地となっている貴重な干潟。都会のすぐそばで、数多くの生命が育まれています。</p>
-				<p class="topabout__text">四季を通してさまざまな野鳥や植物、水辺の生きものを観察できます。訪れるたびに異なる景色や生きものとの出会いがあります。</p>
-				<p class="topabout__text">この豊かな自然を、未来へ。</p>
+			<div class="topabout__text">
+				<p>
+					<strong>都会に残された、身近で貴重な自然</strong>
+				</p>
+				<p>
+					谷津干潟は千葉県習志野市にある、街に囲まれた自然です。
+				</p>
+				<p>
+					ラムサール条約に登録され、世界的な渡り鳥の中継地となっている干潟です。都会のすぐそばで、数多くの生命が育まれています。
+				</p>
+				<p>
+					四季を通してさまざまな野鳥や植物、水辺の生きものを観察できます。訪れるたびに異なる景色や生きものとの出会いがあります。
+				</p>
+				<p>
+					この豊かな自然を、未来へ。
+				</p>
 			</div>
 			<div class="topabout__img">
-				<img src="assets/images/about.png" alt="谷津干潟の景色">
+				<img src="assets/images/top_about.jpg" alt="谷津干潟の景色">
 			</div>
 		</div>
 
@@ -161,14 +172,14 @@
 	</section>
 
 	<!-- 観察・散策ガイド -->
-	<section class="content">
+	<section class="topblock">
 		<h2 class="mainbox__tophead">
 			<span class="mainbox__tophead-eng">GUIDE</span>
 			観察・散策ガイド
 		</h2>
 		
 		<p class="upage__text">
-			谷津干潟を観察する上でのいろいろな情報を集めてみました。ぜひ参考にしてみてください。
+			野鳥を観察できるポイントや、季節ごとに出会える生きものをご紹介します。
 		</p>
 
 		<ul class="topguide">
@@ -178,14 +189,11 @@
 			<li class="topguide__card">
 				<a href="guide/living.html" class="topguide__link">季節の生きもの</a>
 			</li>
-			<li class="topguide__card">
-				<a href="guide/shop.html" class="topguide__link">周辺のお店</a>
-			</li>
 		</ul>
 	</section>
 
 	<!-- アクセス -->
-	<section class="content accessbox">
+	<section class="topblock accessbox">
 		<h2 class="mainbox__tophead">
 			<span class="mainbox__tophead-eng">ACCESS</span>
 			アクセス
@@ -204,9 +212,10 @@
 					電車でお越しの方
 				</h3>
 				<ul class="topaccess__list">
-					<li>JR京葉線「新習志野駅」「南船橋駅」から徒歩約20分</li>
-					<li>京成本線「谷津駅」から徒歩約30分</li>
+					<li>京成本線「谷津駅」から徒歩約15分。谷津干潟自然観察センターまではそこからさらに徒歩約15分。</li>
+					<li>JR京葉線「新習志野駅」「南船橋駅」から谷津干潟自然観察センターまで徒歩約15〜20分</li>
 				</ul>
+				
 				<h3 class="topaccess__title">
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
 						<g clip-path="url(#clip0_51_153)">
@@ -229,8 +238,9 @@
 					バスでお越しの方
 				</h3>
 				<ul class="topaccess__list">
-					<li>JR総武線「津田沼駅」南口からバスで約15分</li>
+					<li>JR総武線「津田沼駅」南口のバス10番のりばから「谷津干潟」まで約15分</li>
 				</ul>
+				
 				<h3 class="topaccess__title">
 					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" focusable="false">
 						<path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M5.09029 5.18658C5.31871 4.72989 5.66978 4.34582 6.10416 4.07739C6.53854 3.80895 7.03908 3.66677 7.54971 3.66675H14.4504C14.961 3.66677 15.4615 3.80895 15.8959 4.07739C16.3303 4.34582 16.6814 4.72989 16.9098 5.18658L18.1803 7.72666C18.404 7.635 18.624 7.536 18.8403 7.42966C19.0579 7.32099 19.3097 7.30321 19.5404 7.38022C19.7711 7.45724 19.9618 7.62274 20.0705 7.84033C20.1791 8.05792 20.1969 8.30977 20.1199 8.54047C20.0429 8.77117 19.8774 8.96183 19.6598 9.0705C19.4398 9.16828 19.2183 9.26361 18.9952 9.3565L19.8761 11.1192C20.0677 11.5015 20.1667 11.9232 20.1667 12.3503V14.6667C20.1667 15.0537 20.0851 15.4362 19.9271 15.7894C19.7691 16.1426 19.5384 16.4585 19.25 16.7164V17.8751C19.25 18.2398 19.1052 18.5895 18.8473 18.8474C18.5895 19.1052 18.2397 19.2501 17.875 19.2501C17.5104 19.2501 17.1606 19.1052 16.9028 18.8474C16.6449 18.5895 16.5 18.2398 16.5 17.8751V17.4167H5.50004V17.8751C5.50004 18.2398 5.35518 18.5895 5.09731 18.8474C4.83945 19.1052 4.48971 19.2501 4.12504 19.2501C3.76037 19.2501 3.41063 19.1052 3.15277 18.8474C2.89491 18.5895 2.75004 18.2398 2.75004 17.8751V16.7164C2.18721 16.2122 1.83337 15.4807 1.83337 14.6667V12.3494C1.83337 11.9222 1.93329 11.5015 2.12396 11.1202L2.99754 9.37116C2.77632 9.27828 2.55785 9.17836 2.34212 9.07141C2.12564 8.96133 1.96107 8.77058 1.88391 8.5403C1.80675 8.31001 1.82317 8.05863 1.92962 7.84033C1.98339 7.73256 2.05788 7.63644 2.14881 7.55746C2.23975 7.47849 2.34536 7.41821 2.45961 7.38007C2.57385 7.34193 2.69449 7.32668 2.81463 7.33519C2.93477 7.3437 3.05206 7.3758 3.15979 7.42966C3.37674 7.53661 3.59674 7.63561 3.81979 7.72666L5.09029 5.18658Z" fill="#40C0E7"/>
@@ -239,7 +249,7 @@
 					車でお越しの方
 				</h3>
 				<ul class="topaccess__list">
-					<li>谷津干潟公園駐車場あり</li>
+					<li>谷津干潟公園駐車場</li>
 				</ul>
 			</div>
 			<!-- マップ -->
