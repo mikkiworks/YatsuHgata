@@ -1,0 +1,6 @@
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^index\.html$ index.php [R=301,L]
+<Files "form.php">
+    Require all denied
+</Files>

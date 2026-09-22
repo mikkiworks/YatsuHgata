@@ -12,11 +12,11 @@ const pages = new Map([
 	['about/index.html', 'about'],
 	['about/master.html', 'about'],
 	['access/index.html', 'access'],
-	['contact/index.html', 'contact'],
+	['contact/index.php', 'contact'],
 	['guide/index.html', 'guide'],
 	['guide/living.html', 'guide'],
 	['guide/shop.html', 'guide'],
-	['news/details.html', 'news'],
+	['news/2026/0922.html', 'news'],
 	['news/index.html', 'news'],
 	['partner/index.html', null],
 	['privacy/index.html', null]
@@ -29,7 +29,7 @@ for (const [relativePath, activeSection] of pages) {
 	const source = await readFile(filePath, 'utf8');
 	const header = source.match(/<header class="sidebar">[\s\S]*?<\/header>/)?.[0] ?? '';
 	const footer = source.match(/<footer class="footer">[\s\S]*?<\/footer>/)?.[0] ?? '';
-	const pathPrefix = relativePath === 'index.html' ? '' : '../';
+	const pathPrefix = '../'.repeat(relativePath.split('/').length - 1);
 
 	check(relativePath, Boolean(header), '共通ヘッダーがありません');
 	check(relativePath, Boolean(footer), '共通フッターがありません');
@@ -47,7 +47,7 @@ for (const [relativePath, activeSection] of pages) {
 	const activeLinks = header.match(/<a [^>]*class="gnavi__item active"[^>]*>/g) ?? [];
 	if (activeSection) {
 		check(relativePath, activeLinks.length === 1, '現在地は1項目だけに設定してください');
-		check(relativePath, activeLinks[0]?.includes(`href="../${activeSection}/index.html"`) && activeLinks[0]?.includes('aria-current="page"'), '現在地のリンク先またはARIA属性が一致しません');
+		check(relativePath, activeLinks[0]?.includes(`href="${pathPrefix}${activeSection}/index.${activeSection === 'contact' ? 'php' : 'html'}"`) && activeLinks[0]?.includes('aria-current="page"'), '現在地のリンク先またはARIA属性が一致しません');
 	} else {
 		check(relativePath, activeLinks.length === 0, 'このページではメインナビに現在地を設定しません');
 	}

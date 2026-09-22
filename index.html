@@ -19,9 +19,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Hannari&family=Noto+Serif+JP:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="canonical" href="https://yatsuhigata.com/">
 	<script src="assets/js/main.js" defer></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NTGB4XW62"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-1NTGB4XW62');
+	</script>
 </head>
 
 <body>
@@ -80,7 +87,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="contact/index.html" class="gnavi__item">
+				<a href="contact/index.php" class="gnavi__item">
 					<span class="gnavi__engtxt">CONTACT</span>
 					お問い合わせ
 				</a>
@@ -110,8 +117,8 @@
 
 		<div class="topvisual__photo">
 			<img class="topvisual__photo1" src="assets/images/living_heron.jpg" alt="谷津干潟のアオサギ">
-			<img class="topvisual__photo2" src="assets/images/kv02.png" alt="谷津干潟の全体風景">
-			<img class="topvisual__photo3" src="assets/images/kv03.png" alt="谷津干潟の紅葉">
+			<img class="topvisual__photo2" src="assets/images/kv02.png" alt="街並みを背景にした谷津干潟の風景">
+			<img class="topvisual__photo3" src="assets/images/kv03.png" alt="谷津公園の紅葉">
 		</div>
 	</section>
 
@@ -125,8 +132,8 @@
 
 		<ul class="news__list">
 			<li class="news__item">
-				<a href="news/details.html">
-					<time datetime="2026-08-07">2026年8月7日（金）</time>
+				<a href="news/2026/0922.html">
+					<time datetime="2026-09-22">2026年9月22日（火）</time>
 					<span class="news__cat">お知らせ</span>
 					<h3 class="news__title">谷津干潟ナビを公開しました！</h3>
 				</a>
@@ -147,10 +154,10 @@
 					<strong>都会に残された、身近で貴重な自然</strong>
 				</p>
 				<p>
-					谷津干潟は千葉県習志野市にある、街に囲まれた自然です。
+					谷津干潟は、千葉県習志野市の街なかに残された干潟です。
 				</p>
 				<p>
-					ラムサール条約に登録され、世界的な渡り鳥の中継地となっている干潟です。都会のすぐそばで、数多くの生命が育まれています。
+					ラムサール条約に登録され、渡り鳥が羽を休め、栄養を補給する大切な中継地となっています。
 				</p>
 				<p>
 					四季を通してさまざまな野鳥や植物、水辺の生きものを観察できます。訪れるたびに異なる景色や生きものとの出会いがあります。
@@ -173,32 +180,32 @@
 
 	<!-- 観察・散策ガイド -->
 	<section class="topblock">
-		<h2 class="mainbox__tophead">
-			<span class="mainbox__tophead-eng">GUIDE</span>
+		<h2 class="topblock__title">
+			<span class="topblock__eng">GUIDE</span>
 			観察・散策ガイド
 		</h2>
-		
-		<p class="upage__text">
-			野鳥を観察できるポイントや、季節ごとに出会える生きものをご紹介します。
+
+		<p class="topguide__text">
+			野鳥を観察できるポイントや、谷津干潟で出会える生きものをご紹介します。
 		</p>
 
-		<ul class="topguide">
-			<li class="topguide__card">
+		<ul class="topguide__card">
+			<li class="topguide__item">
 				<a href="guide/index.html" class="topguide__link">観察ポイント</a>
 			</li>
-			<li class="topguide__card">
-				<a href="guide/living.html" class="topguide__link">季節の生きもの</a>
+			<li class="topguide__item">
+				<a href="guide/living.html" class="topguide__link">谷津干潟の生きもの</a>
 			</li>
 		</ul>
 	</section>
 
 	<!-- アクセス -->
-	<section class="topblock accessbox">
-		<h2 class="mainbox__tophead">
-			<span class="mainbox__tophead-eng">ACCESS</span>
+	<section class="topblock">
+		<h2 class="topblock__title">
+			<span class="topblock__eng">ACCESS</span>
 			アクセス
 		</h2>
-		<a class="mainbox__rlink" href="access/index.html">詳しいアクセス</a>
+		<a class="topblock__rlink" href="access/index.html">詳しいアクセス</a>
 
 		<div class="topaccess">
 			<div class="topaccess__text">
@@ -212,8 +219,8 @@
 					電車でお越しの方
 				</h3>
 				<ul class="topaccess__list">
-					<li>京成本線「谷津駅」から徒歩約15分。谷津干潟自然観察センターまではそこからさらに徒歩約15分。</li>
-					<li>JR京葉線「新習志野駅」「南船橋駅」から谷津干潟自然観察センターまで徒歩約15〜20分</li>
+					<li class="topaccess__item">京成本線「谷津駅」から谷津干潟まで徒歩約15分。谷津干潟自然観察センターまではそこからさらに徒歩約15分。</li>
+					<li class="topaccess__item">JR京葉線「新習志野駅」「南船橋駅」から谷津干潟自然観察センターまで徒歩約20分</li>
 				</ul>
 				
 				<h3 class="topaccess__title">
@@ -238,7 +245,7 @@
 					バスでお越しの方
 				</h3>
 				<ul class="topaccess__list">
-					<li>JR総武線「津田沼駅」南口のバス10番のりばから「谷津干潟」まで約15分</li>
+					<li class="topaccess__item">JR総武線「津田沼駅」南口のバス10番のり場から終点「谷津干潟」まで約15分</li>
 				</ul>
 				
 				<h3 class="topaccess__title">
@@ -249,7 +256,7 @@
 					車でお越しの方
 				</h3>
 				<ul class="topaccess__list">
-					<li>谷津干潟公園駐車場</li>
+					<li class="topaccess__item">谷津干潟公園駐車場 ( 国道357号線の下り車線から入場 )</li>
 				</ul>
 			</div>
 			<!-- マップ -->
@@ -260,22 +267,25 @@
 	</section>
 
 	<!-- 協力パートナー -->
-	<section class="c-partner">
-		<h2 class="c-partner__head">
-			<span class="c-partner__head-eng">PARTNER</span>
+	<section class="partner">
+		<h2 class="partner__title">
+			<span class="partner__eng">PARTNER</span>
 			協力パートナー
 		</h2>
 
-		<div class="c-partner__card">
-			<a href="partner/index.html" class="c-partner__link looking">
-				<span class="looking__box">パートナー募集中</span>
+		<div class="partner__card">
+			<a href="partner/index.html" class="partner__item looking">
+				パートナー募集中
 			</a>
+			<!-- a href="partner/index.html" class="partner__item">
+				<img src="assets/images/about_sunset.png">
+			</a -->
 		</div>
 
-		<p class="c-partner__text">
+		<p class="partner__text">
 			谷津干潟周辺のお店・企業・活動団体の情報を掲載できます。<br>
 			地域の魅力を一緒に発信しませんか。<br>
-			掲載をご希望の方は、<a href="contact/index.html">お問い合わせ</a> よりご相談ください。
+			掲載をご希望の方は、<a href="contact/index.php">お問い合わせ</a> よりご相談ください。
 		</p>
 	</section>
 
@@ -291,7 +301,7 @@
 		<li class="footer__item"><a href="about/master.html">管理人について</a></li>
 		<li class="footer__item"><a href="partner/index.html">協力パートナー募集</a></li>
 		<li class="footer__item"><a href="privacy/index.html">プライバシーポリシー</a></li>
-		<li class="footer__item"><a href="contact/index.html">お問い合わせ</a></li>
+		<li class="footer__item"><a href="contact/index.php">お問い合わせ</a></li>
 	</ul>
 	</nav>
 	<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>
