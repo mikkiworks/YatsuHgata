@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
 	content: '\e5cc';
 	font-size: 14px;
 }
-.gnavi__item::hover {
+.gnavi__item:hover {
 	background: var(--color-bg-base);
 }
 
@@ -219,6 +219,16 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 0.7rem;
 	color: var(--color-primary);
 	letter-spacing: 1.35px;
+}
+
+/* 現在いるカテゴリ */
+.gnavi__item[aria-current="page"] {
+	background: #1769A3;
+	color: #fff;
+
+	& .gnavi__engtxt {
+		color: inherit;
+	}
 }
 
 
@@ -749,9 +759,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ちょっと広いDT */
-.subpage__dl--wide {
-	margin: 0 0 130px 0;
-}
 .subpage__dl--wide dt {
 	flex: 0 0 240px;
 
@@ -1024,6 +1031,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /**** 最新情報 一覧 ****/
+.news__date {
+	text-align: right;
+	font-size: 0.9rem;
+}
+
 .news__list {
 	font-size: 16px;
 }
