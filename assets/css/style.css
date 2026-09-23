@@ -566,7 +566,11 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 .section__imgarea.center img {
-	max-width: 80%; 
+	max-width: 80%;
+	
+	@media (max-width: 768px) {
+		max-width: 100%;1
+	}
 }
 
 /* 画像 右配置 */
@@ -589,15 +593,19 @@ h1, h2, h3, h4, h5, h6 {
 	flex: 0 300px;
 	
 	@media (max-width: 768px) {
+		flex: 0 1;
 		text-align: center;
 	}
 }
 .section__imgarea.right img {
 	width: 100%;
 	max-width: none;
-	
+
 	@media (max-width: 768px) {
-		width: 50%;
+		margin: -20px 0 0 0;
+		aspect-ratio: 4 / 2;
+		object-fit: cover;
+		object-position: center 40%;
 	}
 }
 
@@ -992,7 +1000,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #333;
 	
 	@media (max-width: 1200px) {
-		top: 30px;
+		top: 40px;
 		right: 20px;
 	}
 }
@@ -1349,6 +1357,10 @@ h1, h2, h3, h4, h5, h6 {
 .history__img {
 	margin: 0 8% 30px 8%;
 	text-align: center;
+	
+	@media (max-width: 768px) {
+		margin: 0 0 30px 0;
+	}
 }
 .history__img img {
 	display: inline;
@@ -1368,6 +1380,10 @@ h1, h2, h3, h4, h5, h6 {
 	border-top: 1px dotted #ddd;
 	margin: 50px 0 60px 0;
 	padding: 50px 0 0 0;
+	
+	@media (max-width: 768px) {
+		margin: 50px 0 0 0;
+	}
 }
 
 .history__aside li {
@@ -1392,11 +1408,12 @@ h1, h2, h3, h4, h5, h6 {
 	min-width: 0;
 	width: 100%;
 	height: auto;
+	border-radius: 4px;
 	object-fit: contain;
 
 	@media (max-width: 768px) {
 		object-fit: cover;
-		aspect-ratio: 7 / 2;
+		aspect-ratio: 7 / 3;
 	}
 }
 
@@ -1404,6 +1421,10 @@ h1, h2, h3, h4, h5, h6 {
 	width: 66%;
 	margin-left: auto;
 	margin-right: auto;
+	
+	@media (max-width: 768px) {
+		width: 100%;
+	}
 }
 
 .rulelist {
@@ -1494,7 +1515,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 20px;
 	
 	@media (max-width: 768px) {
-		width: calc((100% - 40px) / 2);
+		width: calc((100% - 20px) / 2);
 		margin: 0;
 	}
 }
