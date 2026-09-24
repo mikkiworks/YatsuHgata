@@ -54,7 +54,7 @@ require __DIR__ . '/form.php';
 		</button>
 
 		<!-- ロゴ -->
-		<a href="../index.html" class="sidebar__logo">
+		<a href="../" class="sidebar__logo">
 			<img class="logo__item" src="../assets/images/logo.png" alt="谷津干潟ナビ">
 		</a>
 
@@ -70,31 +70,31 @@ require __DIR__ . '/form.php';
 
 			<ul>
 				<li>
-					<a href="../news/index.html" class="gnavi__item">
+					<a href="../news/" class="gnavi__item">
 						<span class="gnavi__engtxt">NEWS</span>
 						最新情報
 					</a>
 				</li>
 				<li>
-					<a href="../about/index.html" class="gnavi__item">
+					<a href="../about/" class="gnavi__item">
 						<span class="gnavi__engtxt">ABOUT</span>
 						谷津干潟とは
 					</a>
 				</li>
 				<li>
-					<a href="../guide/index.html" class="gnavi__item">
+					<a href="../guide/" class="gnavi__item">
 						<span class="gnavi__engtxt">GUIDE</span>
 						観察・散策ガイド
 					</a>
 				</li>
 				<li>
-					<a href="../access/index.html" class="gnavi__item">
+					<a href="../access/" class="gnavi__item">
 						<span class="gnavi__engtxt">ACCESS</span>
 						アクセス
 					</a>
 				</li>
 				<li>
-					<a href="../contact/index.php" class="gnavi__item active" aria-current="page">
+					<a href="../contact/" class="gnavi__item active" aria-current="page">
 						<span class="gnavi__engtxt">CONTACT</span>
 						お問い合わせ
 					</a>
@@ -160,7 +160,7 @@ require __DIR__ . '/form.php';
                 		<textarea name="message" maxlength="5000" rows="5" placeholder="ご自由にご記入ください" required><?= contact_escape($values['message']) ?></textarea>
 					</label>
 					<p class="form__text">
-						ご入力いただいた情報は、お問い合わせへの対応に利用します。個人情報の取り扱いについては、<a href="../privacy/index.html" target="_blank" rel="noopener">プライバシーポリシー（別タブで開きます）</a>をご確認ください。
+						ご入力いただいた情報は、お問い合わせへの対応に利用します。個人情報の取り扱いについては、<a href="../privacy/" target="_blank" rel="noopener">プライバシーポリシー（別タブで開きます）</a>をご確認ください。
 					</p>
 					<div class="form-submit">
 						<button type="submit" name="action" value="confirm" class="c-button">確認画面へ</button>
@@ -190,22 +190,22 @@ require __DIR__ . '/form.php';
                     <p class="form__text">お問い合わせは受け付けましたが、自動返信メールを送信できませんでした。再送信は不要です。</p>
                     <?php endif; ?>
                     <p class="form__text">内容を確認のうえ、必要に応じて返信いたします。返信までお時間をいただく場合があります。</p>
-                    <p class="form__text"><a href="../index.html">トップページへ戻る</a></p>
+                    <p class="form__text"><a href="../">トップページへ戻る</a></p>
                     <?php endif; ?>
                 </div>
 			</div>
 		</main>
 	
 		<footer class="footer">
-			<a href="../index.html" class="footer__logo">
+			<a href="../" class="footer__logo">
 				<img src="../assets/images/logo.png" alt="谷津干潟ナビ">
 			</a>
 			<nav aria-label="フッターナビゲーション">
 			<ul class="footer__list">
 				<li class="footer__item"><a href="../about/master.html">管理人について</a></li>
-				<li class="footer__item"><a href="../partner/index.html">協力パートナー募集</a></li>
-				<li class="footer__item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
-				<li class="footer__item"><a href="../contact/index.php">お問い合わせ</a></li>
+				<li class="footer__item"><a href="../partner/">協力パートナー募集</a></li>
+				<li class="footer__item"><a href="../privacy/">プライバシーポリシー</a></li>
+				<li class="footer__item"><a href="../contact/">お問い合わせ</a></li>
 			</ul>
 			</nav>
 			<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>

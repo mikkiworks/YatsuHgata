@@ -1,34 +1,18 @@
 import { access, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getPublicUrl, pages, siteUrl } from './site-config.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDirectory, '..');
 
-const pages = new Map([
-	['index.html', null],
-	['about/conservation.html', 'about'],
-	['about/history.html', 'about'],
-	['about/index.html', 'about'],
-	['about/master.html', 'about'],
-	['access/index.html', 'access'],
-	['contact/index.php', 'contact'],
-	['guide/index.html', 'guide'],
-	['guide/living.html', 'guide'],
-	['guide/shop.html', 'guide'],
-	['news/2026/0922.html', 'news'],
-	['news/2026/0923.html', 'news'],
-	['news/2026/0923-02.html', 'news'],
-	['news/index.html', 'news'],
-	['partner/index.html', null],
-	['privacy/index.html', null]
-]);
-
 const errors = [];
+const pageSources = new Map();
 
 for (const [relativePath, activeSection] of pages) {
 	const filePath = resolve(projectRoot, relativePath);
 	const source = await readFile(filePath, 'utf8');
+	pageSources.set(relativePath, source);
 	const header = source.match(/<header class="sidebar">[\s\S]*?<\/header>/)?.[0] ?? '';
 	const footer = source.match(/<footer class="footer">[\s\S]*?<\/footer>/)?.[0] ?? '';
 	const pathPrefix = '../'.repeat(relativePath.split('/').length - 1);
@@ -37,6 +21,7 @@ for (const [relativePath, activeSection] of pages) {
 	check(relativePath, Boolean(footer), '共通フッターがありません');
 	check(relativePath, count(source, /id="js-toggle"/g) === 1, '#js-toggle は1個必要です');
 	check(relativePath, count(source, /id="gnavi"/g) === 1, '#gnavi は1個必要です');
+	check(relativePath, !/href="[^"]*index\.(?:html|php)(?:[?#][^"]*)?"/.test(source), 'ディレクトリトップへのリンクに index.html または index.php を含めないでください');
 	check(relativePath, header.includes('aria-label="メニューを開く" aria-expanded="false" aria-controls="gnavi"'), 'メニューボタンのARIA属性が一致しません');
 	check(relativePath, header.includes('id="gnavi" aria-label="メインナビゲーション"'), 'メインナビのARIA属性が一致しません');
 	check(relativePath, count(header, /class="gnavi__item(?: active)?"/g) === 5, 'メインナビは5項目必要です');
@@ -48,8 +33,9 @@ for (const [relativePath, activeSection] of pages) {
 
 	const activeLinks = header.match(/<a [^>]*class="gnavi__item active"[^>]*>/g) ?? [];
 	if (activeSection) {
+		const activeHref = `${pathPrefix}${activeSection}/`;
 		check(relativePath, activeLinks.length === 1, '現在地は1項目だけに設定してください');
-		check(relativePath, activeLinks[0]?.includes(`href="${pathPrefix}${activeSection}/index.${activeSection === 'contact' ? 'php' : 'html'}"`) && activeLinks[0]?.includes('aria-current="page"'), '現在地のリンク先またはARIA属性が一致しません');
+		check(relativePath, activeLinks[0]?.includes(`href="${activeHref}"`) && activeLinks[0]?.includes('aria-current="page"'), '現在地のリンク先またはARIA属性が一致しません');
 	} else {
 		check(relativePath, activeLinks.length === 0, 'このページではメインナビに現在地を設定しません');
 	}
@@ -98,11 +84,28 @@ for (const year of ['2026', '2027']) {
 	check(`assets/data/tides/${year}.json`, Object.keys(tideData.days ?? {}).length === expectedDays, `${expectedDays}日分の潮位データが必要です`);
 }
 
+const expectedSitemapUrls = [...pageSources]
+	.filter(([, source]) => !/<meta[^>]+(?:name="robots"[^>]+content="[^"]*noindex|content="[^"]*noindex[^"]*"[^>]+name="robots")[^>]*>/i.test(source))
+	.map(([relativePath]) => getPublicUrl(relativePath))
+	.sort((a, b) => a.localeCompare(b, 'en'));
+const sitemapSource = await readFile(resolve(projectRoot, 'sitemap.xml'), 'utf8');
+const sitemapUrls = [...sitemapSource.matchAll(/<loc>([^<]+)<\/loc>/g)]
+	.map((match) => match[1])
+	.sort((a, b) => a.localeCompare(b, 'en'));
+check('sitemap.xml', sitemapSource.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), 'XMLサイトマップの名前空間がありません');
+check('sitemap.xml', JSON.stringify(sitemapUrls) === JSON.stringify(expectedSitemapUrls), '公開対象ページのURL一覧と一致しません');
+check('sitemap.xml', new Set(sitemapUrls).size === sitemapUrls.length, 'URLが重複しています');
+check('sitemap.xml', sitemapUrls.every((url) => url.startsWith(siteUrl)), 'サイト外または相対URLが含まれています');
+check('sitemap.xml', sitemapUrls.every((url) => !/\/index\.(?:html|php)$/.test(url)), 'index.html または index.php を含むURLがあります');
+
+const robotsSource = await readFile(resolve(projectRoot, 'robots.txt'), 'utf8');
+check('robots.txt', robotsSource.includes(`Sitemap: ${siteUrl}sitemap.xml`), 'サイトマップURLがありません');
+
 if (errors.length) {
 	console.error(errors.join('\n'));
 	process.exitCode = 1;
 } else {
-	console.log(`共通レイアウトと潮位参照を検証しました（${pages.size}ページ）`);
+	console.log(`共通レイアウト、潮位参照、サイトマップを検証しました（${pages.size}ページ）`);
 }
 
 function check(relativePath, condition, message) {

@@ -1,39 +1,25 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { pages } from './site-config.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDirectory, '..');
 
-const pages = new Map([
-	['about/conservation.html', 'about'],
-	['about/history.html', 'about'],
-	['about/index.html', 'about'],
-	['about/master.html', 'about'],
-	['access/index.html', 'access'],
-	['contact/index.php', 'contact'],
-	['guide/index.html', 'guide'],
-	['guide/living.html', 'guide'],
-	['guide/shop.html', 'guide'],
-	['news/2026/0922.html', 'news'],
-	['news/2026/0923.html', 'news'],
-	['news/2026/0923-02.html', 'news'],
-	['news/index.html', 'news'],
-	['partner/index.html', null],
-	['privacy/index.html', null]
-]);
-
 const navigationItems = [
-	{ key: 'news', href: 'news/index.html', english: 'NEWS', label: '最新情報' },
-	{ key: 'about', href: 'about/index.html', english: 'ABOUT', label: '谷津干潟とは' },
-	{ key: 'guide', href: 'guide/index.html', english: 'GUIDE', label: '観察・散策ガイド' },
-	{ key: 'access', href: 'access/index.html', english: 'ACCESS', label: 'アクセス' },
-	{ key: 'contact', href: 'contact/index.php', english: 'CONTACT', label: 'お問い合わせ' }
+	{ key: 'news', href: 'news/', english: 'NEWS', label: '最新情報' },
+	{ key: 'about', href: 'about/', english: 'ABOUT', label: '谷津干潟とは' },
+	{ key: 'guide', href: 'guide/', english: 'GUIDE', label: '観察・散策ガイド' },
+	{ key: 'access', href: 'access/', english: 'ACCESS', label: 'アクセス' },
+	{ key: 'contact', href: 'contact/', english: 'CONTACT', label: 'お問い合わせ' }
 ];
 
 let updateCount = 0;
 
 for (const [relativePath, activeSection] of pages) {
+	if (relativePath === 'index.html') {
+		continue;
+	}
 	const filePath = resolve(projectRoot, relativePath);
 	const source = await readFile(filePath, 'utf8');
 	const pathPrefix = '../'.repeat(relativePath.split('/').length - 1);
@@ -76,7 +62,7 @@ function renderHeader(activeSection, pathPrefix) {
 		'\t</button>',
 		'',
 		'\t<!-- ロゴ -->',
-		`\t<a href="${pathPrefix}index.html" class="sidebar__logo">`,
+		`\t<a href="${pathPrefix}" class="sidebar__logo">`,
 		`\t\t<img class="logo__item" src="${pathPrefix}assets/images/logo.png" alt="谷津干潟ナビ">`,
 		'\t</a>',
 		'',
@@ -101,15 +87,15 @@ function renderHeader(activeSection, pathPrefix) {
 function renderFooter(pathPrefix) {
 	return [
 		'<footer class="footer">',
-		`\t<a href="${pathPrefix}index.html" class="footer__logo">`,
+		`\t<a href="${pathPrefix}" class="footer__logo">`,
 		`\t\t<img src="${pathPrefix}assets/images/logo.png" alt="谷津干潟ナビ">`,
 		'\t</a>',
 		'\t<nav aria-label="フッターナビゲーション">',
 		'\t<ul class="footer__list">',
 		`\t\t<li class="footer__item"><a href="${pathPrefix}about/master.html">管理人について</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}partner/index.html">協力パートナー募集</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}privacy/index.html">プライバシーポリシー</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}contact/index.php">お問い合わせ</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}partner/">協力パートナー募集</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}privacy/">プライバシーポリシー</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}contact/">お問い合わせ</a></li>`,
 		'\t</ul>',
 		'\t</nav>',
 		'\t<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>',

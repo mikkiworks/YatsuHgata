@@ -17,7 +17,7 @@ Xserver の PHP `mail()` からサーバーのメール配送機能に渡しま�
 1. Xserver で `yatsuhigata.com` の無料独自 SSL が有効であること、HTTPS でアクセスできることを確認します。
 2. サイトの `public_html` に変更したファイルを配置します。お問い合わせへのリンクを更新した各 HTML と `assets/css/contact.css` も対象です。
 3. `contact/.htaccess` もアップロードし、サーバー上の旧 `contact/index.html` は削除します。既存の `.htaccess` がある場合は既存設定を保存してから統合してください。
-4. `https://yatsuhigata.com/contact/index.php` を開きます。
+4. `https://yatsuhigata.com/contact/` を開きます。
 
 `scripts/` は保守・テスト用です。公開サーバーへのアップロードは不要です。
 メールアカウントのパスワードを PHP ファイルへ記載しないでください。
