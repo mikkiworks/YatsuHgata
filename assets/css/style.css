@@ -27,16 +27,19 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 * {
 	margin: 0;
 	padding: 0;
-	-webkit-text-size-adjust: 100%;
 }
 
 html {
 	scroll-behavior: smooth;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 body {
@@ -175,14 +178,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar__logo img {
 	display: inline;
-	width: 155px;
+	width: 170px;
+	position: relative;
+	left: -8px;
 	
 	@media (max-width: 1200px) {
-		width: 160px;
+		width: 230px;
+		left: 0;
 	}
 
 	@media (max-width: 768px) {
-		width: 130px;
+		width: 180px;
 	}
 }
 
@@ -579,7 +585,7 @@ h1, h2, h3, h4, h5, h6 {
 	max-width: 80%;
 	
 	@media (max-width: 768px) {
-		max-width: 100%;1
+		max-width: 100%;
 	}
 }
 
@@ -1009,6 +1015,13 @@ h1, h2, h3, h4, h5, h6 {
 	@media (max-width: 1200px) {
 		top: 40px;
 		right: 20px;
+	}
+	@media (max-width: 768px) {
+		position: relative;
+		top: auto;
+		right: auto;
+		align-self: flex-end;
+		margin: -44px 0 20px 0;
 	}
 }
 .topblock__rlink::after {
