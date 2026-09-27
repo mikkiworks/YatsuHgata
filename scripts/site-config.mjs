@@ -15,6 +15,8 @@ export const pages = new Map([
 	['news/2026/0923.html', 'news'],
 	['news/2026/0923-02.html', 'news'],
 	['news/2026/0924.html', 'news'],
+	['news/2026/0927.html', 'news'],
+	['news/2026/0927-02.html', 'news'],
 	['news/index.html', 'news'],
 	['partner/index.html', null],
 	['privacy/index.html', null]
