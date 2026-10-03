@@ -67,7 +67,7 @@ function renderHeader(activeSection, pathPrefix) {
 		'\t</a>',
 		'',
 		'\t<!-- グローバルナビ -->',
-		'\t<nav class="gnavi dotted-line-btm" id="gnavi" aria-label="メインナビゲーション">',
+		'\t<nav class="gnavi" id="gnavi" aria-label="メインナビゲーション">',
 		'',
 		'\t\t<!-- SP用満干時間 -->',
 		'\t\t<div class="tidearea sp" aria-live="polite">',
@@ -79,6 +79,9 @@ function renderHeader(activeSection, pathPrefix) {
 		'\t\t<ul>',
 		navigation,
 		'\t\t</ul>',
+		'\t\t<a href="https://www.instagram.com/yatsuhigatanavi/" class="sidebar__instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開く）">',
+		`\t\t\t<img src="${pathPrefix}assets/images/instagram.png" alt="Instagram" width="28" height="28">`,
+		'\t\t</a>',
 		'\t</nav>',
 		'</header>'
 	].join('\n');

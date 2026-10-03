@@ -189,6 +189,27 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+/* サイドバー Instagram */
+.sidebar__instagram {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	margin: 24px auto;
+}
+
+.sidebar__instagram img {
+	display: block;
+	width: 28px;
+	height: 28px;
+	object-fit: contain;
+}
+
+.sidebar__instagram[target="_blank"]::after {
+	content: none;
+}
+
 /* グローバルナビ */
 .gnavi__item {
 	position: relative;

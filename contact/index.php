@@ -59,7 +59,7 @@ require __DIR__ . '/form.php';
 		</a>
 
 		<!-- グローバルナビ -->
-		<nav class="gnavi dotted-line-btm" id="gnavi" aria-label="メインナビゲーション">
+		<nav class="gnavi" id="gnavi" aria-label="メインナビゲーション">
 
 			<!-- SP用満干時間 -->
 			<div class="tidearea sp" aria-live="polite">
@@ -100,6 +100,9 @@ require __DIR__ . '/form.php';
 					</a>
 				</li>
 			</ul>
+			<a href="https://www.instagram.com/yatsuhigatanavi/" class="sidebar__instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開く）">
+				<img src="../assets/images/instagram.png" alt="Instagram" width="28" height="28">
+			</a>
 		</nav>
 	</header>
 
