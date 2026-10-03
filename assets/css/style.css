@@ -68,6 +68,7 @@ a[target="_blank"]::after {
 	position: relative;
 	top: 3px;
 	left: 4px;
+	margin-right: 8px;
 	font-size: 18px;
 }
 
@@ -1043,6 +1044,27 @@ h1, h2, h3, h4, h5, h6 {
 .news__date {
 	text-align: right;
 	font-size: 0.9rem;
+}
+
+.news__details {
+	display: grid;
+	grid-template-columns: 5em minmax(0, 1fr);
+	width: 90%;
+	margin: 30px auto 40px auto;
+}
+.news__details dt,
+.news__details dd {
+	padding: 14px 10px;
+	border-bottom: 1px solid #ddd;
+	font-size: 0.95rem;
+}
+.news__details dt {
+	font-weight: bold;
+}
+.news__details dd {
+	min-width: 0;
+	margin: 0;
+	overflow-wrap: anywhere;
 }
 
 .news__list {
