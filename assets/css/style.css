@@ -1829,4 +1829,11 @@ h1, h2, h3, h4, h5, h6 {
 	.is-instagram .partner__item.looking {
 		font-size: 14px;
 	}
+
+	.is-instagram .footer__list {
+		font-size: 12px;
+	}
+	.is-instagram .pagetitle {
+		font-size: 32px;
+	}
 }
