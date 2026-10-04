@@ -6,6 +6,7 @@ export const pages = new Map([
 	['about/history.html', 'about'],
 	['about/index.html', 'about'],
 	['about/master.html', 'about'],
+	['about/community-info.html', null],
 	['access/index.html', 'access'],
 	['contact/index.php', 'contact'],
 	['guide/index.html', 'guide'],
