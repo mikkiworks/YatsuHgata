@@ -782,6 +782,11 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+/* 基本DTDDの直後の文章 */
+.subpage__dl + .section__text {
+	margin-top: 30px;
+}
+
 /* ちょっと広いDT */
 .subpage__dl--wide dt {
 	flex: 0 0 240px;
