@@ -977,6 +977,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.top-tides {
+	display: none;
+
+	@media (max-width: 1200px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
+		margin: 16px 40px 0;
+		padding: 12px 16px;
+		border: 1px solid #d6e8f6;
+		border-radius: 4px;
+		background: #eaf4fc;
+		color: #444;
+		font-size: 13px;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		margin-right: 25px;
+		margin-left: 25px;
+	}
+}
+
+.top-tides__title {
+	margin-bottom: 3px;
+}
+
 /**** コンテンツ基本 ****/
 .topblock {
 	position: relative;
