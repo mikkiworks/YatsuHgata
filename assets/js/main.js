@@ -4,8 +4,20 @@ if (/Instagram/i.test(navigator.userAgent)) {
 
 document.addEventListener('DOMContentLoaded', () => {
 	setupMobileMenu();
+	updateEventStatuses();
 	loadTodayTides();
 });
+
+function updateEventStatuses(date = new Date()) {
+	const today = getJapanDateParts(date).key;
+
+	document.querySelectorAll('[data-event-end]').forEach((event) => {
+		const hasEnded = event.dataset.eventEnd < today;
+		event.querySelectorAll('[data-event-ended]').forEach((element) => {
+			element.hidden = !hasEnded;
+		});
+	});
+}
 
 function setupMobileMenu() {
 	const toggleBtn = document.getElementById('js-toggle');

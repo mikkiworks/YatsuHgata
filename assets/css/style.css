@@ -1072,6 +1072,32 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 0.9rem;
 }
 
+.news__status {
+	display: inline-block;
+	margin-right: 0.6em;
+	padding: 2px 8px;
+	border-radius: 2px;
+	background: #e7e7e7;
+	color: #555;
+	font-size: 12px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.news__ended-notice {
+	margin: 20px 0;
+	padding: 14px 18px;
+	border-left: 3px solid #888;
+	background: #f3f3f3;
+	color: #444;
+	font-size: 0.95rem;
+}
+
+.news__status[hidden],
+.news__ended-notice[hidden] {
+	display: none;
+}
+
 .news__details {
 	display: grid;
 	grid-template-columns: 5em minmax(0, 1fr);
@@ -1275,7 +1301,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .topguide__item:nth-child(1) {
-	background: url(../images/top_guide_point.png) no-repeat;
+	background: url(../images/top_guide_point.jpg) no-repeat;
 	background-size: cover;
 }
 .topguide__item:nth-child(2) {
