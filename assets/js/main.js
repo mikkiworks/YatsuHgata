@@ -12,7 +12,7 @@ function setupMobileMenu() {
 	const sidebar = document.querySelector('.sidebar');
 	const nav = document.getElementById('gnavi');
 	const sidebarLogo = document.querySelector('.sidebar__logo');
-	const mainContainer = document.querySelector('.main-container');
+	const mainContainer = document.querySelector('.rightside');
 
 	if (!toggleBtn || !sidebar || !nav) {
 		return;
