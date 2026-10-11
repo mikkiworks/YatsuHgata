@@ -1132,6 +1132,9 @@ h1, h2, h3, h4, h5, h6 {
 	width: 90%;
 	margin: 30px auto 40px auto;
 }
+.news__details--wide-label {
+	grid-template-columns: 8em minmax(0, 1fr);
+}
 .news__details dt,
 .news__details dd {
 	padding: 14px 10px;
