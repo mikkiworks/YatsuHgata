@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="580" viewBox="0 0 800 580" role="img" aria-labelledby="title desc">
+  <title id="title">谷津干潟一周の散策コース概略図</title>
+  <desc id="desc">北を上に、南側の観察センター付近から西側、北側、東側を回って戻る一周約3.5kmのコース。センター周辺に休憩場所、南東側に駐車場があります。形や距離を簡略化しています。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#246b9f"/>
+    </marker>
+  </defs>
+  <rect width="800" height="580" rx="8" fill="#f7fbfd"/>
+  <g font-family="'Hiragino Sans',Meiryo,sans-serif" fill="#253c44" text-anchor="middle">
+    <text x="400" y="42" font-size="23" font-weight="bold">一周 約3.5km・時計回りの例</text>
+    <path d="M740 110 V65" stroke="#253c44" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="740" y="137" font-size="21">北</text>
+    <path d="M190 165 Q380 120 610 175 L660 330 Q520 380 270 340 L165 270 Z" fill="#d5eceb"/>
+    <path d="M390 385 L260 370 L125 285 L155 140 Q360 90 650 150 L700 340 L590 395 Z" fill="none" stroke="#246b9f" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M250 364 L200 333 M141 226 L148 182 M355 119 L415 122 M675 230 L687 277 M563 394 L504 390" fill="none" stroke="#246b9f" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="405" y="250" font-size="35" fill="#346d73">谷津干潟</text>
+    <text x="405" y="284" font-size="18">水辺の景色や野鳥を楽しむ</text>
+    <text x="385" y="90" font-size="23" font-weight="bold">③ 北側の遊歩道</text>
+    <text x="86" y="324" font-size="22" font-weight="bold">② 西側</text>
+    <text x="714" y="390" font-size="22" font-weight="bold">④ 東側</text>
+    <circle cx="390" cy="385" r="11" fill="#fff" stroke="#246b9f" stroke-width="5"/>
+    <path d="M390 398 V428" stroke="#55787e" stroke-width="2"/>
+    <rect x="205" y="430" width="370" height="82" rx="10" fill="#fff" stroke="#9fc8d3"/>
+    <text x="390" y="461" font-size="23" font-weight="bold">① 観察センター付近</text>
+    <text x="390" y="492" font-size="21">出発・到着／休憩</text>
+    <path d="M590 395 L627 457" stroke="#55787e" stroke-width="2" stroke-dasharray="5 5"/>
+    <text x="659" y="490" font-size="22">公園駐車場</text>
+    <text x="400" y="552" font-size="18" fill="#555">位置関係を示す概略図です。縮尺・道の形は実際と異なります。</text>
+  </g>
+</svg>

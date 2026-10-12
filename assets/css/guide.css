@@ -1,0 +1,78 @@
+.walking-guide .pagetitle {
+	line-height: 1.5;
+	font-size: clamp(24px, 3vw, 40px);
+}
+
+.walking-guide [id] {
+	scroll-margin-top: 100px;
+}
+
+.walk-summary {
+	margin: 24px 0;
+	padding: 24px;
+	border: 1px solid var(--color-border);
+    border-radius: 4px;
+	background: var(--color-bg-base);
+}
+
+.walk-summary__time {
+	display: block;
+	margin: 4px 0 12px;
+	font-size: clamp(20px, 2vw, 22px);
+	font-weight: bold;
+	color: #246b9f;
+}
+
+.walking-guide .content a:not(.shopnavi a) {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.walk-map {
+	margin-bottom: 24px;
+}
+
+.walk-map img {
+	width: 100%;
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
+}
+
+.walk-map figcaption,
+.walk-note {
+	margin-top: 12px;
+	font-size: 14px;
+	color: #555;
+}
+
+.walk-route {
+	list-style: decimal;
+	padding-left: 1.5em;
+	margin: 20px 0;
+}
+
+.walk-route li {
+	padding-left: 4px;
+	margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+	.walk-heading__points,
+	.walk-summary__time > span {
+		display: block;
+	}
+	.walk-heading__separator,
+	.walk-summary__time > .walk-summary__separator {
+		display: none;
+	}
+	.walk-summary {
+		padding: 18px;
+	}
+	.walking-guide .shopnavi {
+		flex-wrap: wrap;
+	}
+	.walking-guide .shopnavi a {
+		flex: 1 1 50%;
+		margin-bottom: 0;
+	}
+}
