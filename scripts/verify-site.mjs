@@ -24,16 +24,18 @@ for (const [relativePath, activeSection] of pages) {
 	check(relativePath, !/href="[^"]*index\.(?:html|php)(?:[?#][^"]*)?"/.test(source), 'ディレクトリトップへのリンクに index.html または index.php を含めないでください');
 	check(relativePath, header.includes('aria-label="メニューを開く" aria-expanded="false" aria-controls="gnavi"'), 'メニューボタンのARIA属性が一致しません');
 	check(relativePath, header.includes('id="gnavi" aria-label="メインナビゲーション"'), 'メインナビのARIA属性が一致しません');
-	check(relativePath, count(header, /class="gnavi__item(?: active)?"/g) === 5, 'メインナビは5項目必要です');
-	check(relativePath, count(header, /class="gnavi__engtxt"/g) === 5, 'メインナビの英語表記は5項目必要です');
+	check(relativePath, count(header, /class="gnavi__item(?: active)?"/g) === 6, 'メインナビは6項目必要です');
+	check(relativePath, count(header, /class="gnavi__engtxt"/g) === 6, 'メインナビの英語表記は6項目必要です');
+	const firstNavigationLink = header.match(/<a [^>]*class="gnavi__item(?: active)?"[^>]*>[\s\S]*?<\/a>/)?.[0] ?? '';
+	check(relativePath, firstNavigationLink.includes(`href="${pathPrefix || './'}"`) && firstNavigationLink.includes('トップページ'), 'メインナビの先頭にトップページへのリンクが必要です');
 	check(relativePath, count(header, /data-tide-date/g) === 1, 'モバイル用の日付表示がありません');
 	check(relativePath, count(header, /data-tide-high/g) === 1, 'モバイル用の満潮表示がありません');
 	check(relativePath, count(header, /data-tide-low/g) === 1, 'モバイル用の干潮表示がありません');
 	check(relativePath, source.includes(`<script src="${pathPrefix}assets/js/main.js" defer></script>`), 'main.js の参照先が一致しません');
 
 	const activeLinks = header.match(/<a [^>]*class="gnavi__item active"[^>]*>/g) ?? [];
-	if (activeSection) {
-		const activeHref = `${pathPrefix}${activeSection}/`;
+	if (activeSection || relativePath === 'index.html') {
+		const activeHref = relativePath === 'index.html' ? './' : `${pathPrefix}${activeSection}/`;
 		check(relativePath, activeLinks.length === 1, '現在地は1項目だけに設定してください');
 		check(relativePath, activeLinks[0]?.includes(`href="${activeHref}"`) && activeLinks[0]?.includes('aria-current="page"'), '現在地のリンク先またはARIA属性が一致しません');
 	} else {

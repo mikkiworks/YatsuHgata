@@ -7,6 +7,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(scriptDirectory, '..');
 
 const navigationItems = [
+	{ key: 'home', href: '', english: 'HOME', label: 'トップページ' },
 	{ key: 'news', href: 'news/', english: 'NEWS', label: '最新情報' },
 	{ key: 'about', href: 'about/', english: 'ABOUT', label: '谷津干潟とは' },
 	{ key: 'guide', href: 'guide/', english: 'GUIDE', label: '観察・散策ガイド' },

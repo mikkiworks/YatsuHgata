@@ -70,6 +70,12 @@ require __DIR__ . '/form.php';
 
 			<ul>
 				<li>
+					<a href="../" class="gnavi__item">
+						<span class="gnavi__engtxt">HOME</span>
+						トップページ
+					</a>
+				</li>
+				<li>
 					<a href="../news/" class="gnavi__item">
 						<span class="gnavi__engtxt">NEWS</span>
 						最新情報
