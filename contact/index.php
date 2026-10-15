@@ -22,7 +22,7 @@ require __DIR__ . '/form.php';
 	<link href="https://fonts.googleapis.com/css2?family=Hannari&family=Noto+Serif+JP:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
 
 	<!-- メインCSS（最後に読み込むことでフォントが確実に適用される） -->
-	<link rel="stylesheet" href="../assets/css/style.css?v=20261015-1">
+	<link rel="stylesheet" href="../assets/css/style.css?v=20261015-2">
 	<link rel="stylesheet" href="../assets/css/contact.css?v=20261015-1">
 	
 	<!-- 外部JS -->

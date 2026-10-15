@@ -1899,10 +1899,6 @@ h1, h2, h3, h4, h5, h6 {
 		font-size: 26px;
 	}
 
-	.is-instagram .gnavi__item {
-		font-size:26px;
-	}
-
 	/* 下層共通：トップページの本文と同じサイズを基準にする */
 	.is-instagram .content,
 	.is-instagram .formbox {
