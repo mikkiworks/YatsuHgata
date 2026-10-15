@@ -1902,6 +1902,80 @@ h1, h2, h3, h4, h5, h6 {
 	.is-instagram .gnavi__item {
 		font-size:26px;
 	}
-	.is-instagram .gnavi__engtxt {
+
+	/* 下層共通：トップページの本文と同じサイズを基準にする */
+	.is-instagram .content,
+	.is-instagram .formbox {
+		font-size: 12px;
+	}
+	.is-instagram .pagetitle__eng {
+		font-size: 14px;
+	}
+	.is-instagram .subnavi__item,
+	.is-instagram .shopnavi a {
+		font-size: 12px;
+	}
+	.is-instagram .section__h2 {
+		font-size: 16px;
+	}
+	.is-instagram .section__h3 {
+		font-size: 14px;
+	}
+	.is-instagram .section__h4 {
+		font-size: 12px;
+	}
+	.is-instagram .section__text.small {
+		font-size: 11px;
+	}
+
+	/* 歴史・生きもの：個別の文字サイズ指定を上書き */
+	.is-instagram .history .section__h2 {
+		font-size: 16px;
+	}
+	.is-instagram .history .section__h2 span,
+	.is-instagram .history__img .note {
+		font-size: 11px;
+	}
+	.is-instagram .living_item span {
+		font-size: 12px;
+	}
+
+	/* ニュース詳細 */
+	.is-instagram .news__date,
+	.is-instagram .news__ended-notice,
+	.is-instagram .news__details dt,
+	.is-instagram .news__details dd {
+		font-size: 12px;
+	}
+	.is-instagram .news__status {
+		font-size: 10px;
+	}
+
+	/* 散策ガイドの専用CSSより優先する */
+	.is-instagram .walking-guide .pagetitle {
+		font-size: 26px;
+	}
+	.is-instagram .walk-summary__time {
+		font-size: 16px;
+	}
+	.is-instagram .walk-map figcaption,
+	.is-instagram .walk-note {
+		font-size: 11px;
+	}
+
+	/* お問い合わせ：説明・確認画面と入力欄を分けて指定 */
+	.is-instagram .formbox .catch,
+	.is-instagram .form__text,
+	.is-instagram .form-steps,
+	.is-instagram .form-errors {
+		font-size: 12px;
+	}
+	.is-instagram .form__item input,
+	.is-instagram .form__item textarea,
+	.is-instagram .form__item select {
+		font-size: 16px;
+	}
+	.is-instagram .form-submit button {
+		font-size: 14px;
 	}
 }
