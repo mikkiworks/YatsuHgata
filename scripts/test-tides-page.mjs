@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { adjacentMonth, dateSequence, japanDateKey, monthDates, setupTidePage } from '../assets/js/tides-page.mjs';
+import { adjacentMonth, dateSequence, japanDateKey, monthDates, setupTidePage } from '../assets/js/tides-page.js';
 
 const data = Object.fromEntries(await Promise.all([2026, 2027].map(async (year) => [year,
 	JSON.parse(await readFile(new URL(`../assets/data/tides/${year}.json`, import.meta.url), 'utf8'))
