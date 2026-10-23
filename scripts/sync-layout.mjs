@@ -26,7 +26,7 @@ for (const [relativePath, activeSection] of pages) {
 	const pathPrefix = '../'.repeat(relativePath.split('/').length - 1);
 	const newline = source.includes('\r\n') ? '\r\n' : '\n';
 	let updated = replaceBlock(source, 'header', 'sidebar', renderHeader(activeSection, pathPrefix), newline);
-	updated = replaceBlock(updated, 'footer', 'footer', renderFooter(pathPrefix), newline);
+	updated = replaceBlock(updated, 'footer', 'footer', renderFooter(pathPrefix, relativePath), newline);
 
 	if (updated !== source) {
 		await writeFile(filePath, updated, 'utf8');
@@ -45,7 +45,7 @@ function renderHeader(activeSection, pathPrefix) {
 		return [
 			'\t\t\t<li>',
 			`\t\t\t\t<a href="${pathPrefix}${item.href}" class="gnavi__item${activeClass}"${currentAttribute}>`,
-			`\t\t\t\t\t<span class="gnavi__engtxt">${item.english}</span>`,
+			`\t\t\t\t\t<span class="gnavi__engtxt" lang="en">${item.english}</span>`,
 			`\t\t\t\t\t${item.label}`,
 			'\t\t\t\t</a>',
 			'\t\t\t</li>'
@@ -88,7 +88,9 @@ function renderHeader(activeSection, pathPrefix) {
 	].join('\n');
 }
 
-function renderFooter(pathPrefix) {
+function renderFooter(pathPrefix, relativePath) {
+	const currentAttribute = (pagePath) => relativePath === pagePath ? ' aria-current="page"' : '';
+
 	return [
 		'<footer class="footer">',
 		`\t<a href="${pathPrefix}" class="footer__logo">`,
@@ -96,10 +98,10 @@ function renderFooter(pathPrefix) {
 		'\t</a>',
 		'\t<nav aria-label="フッターナビゲーション">',
 		'\t<ul class="footer__list">',
-		`\t\t<li class="footer__item"><a href="${pathPrefix}about/master.html">管理人について</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}partner/">協力パートナー募集</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}about/community-info.html">地域情報掲載募集</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}privacy/">プライバシーポリシー</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}about/master.html"${currentAttribute('about/master.html')}>管理人について</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}partner/"${currentAttribute('partner/index.html')}>協力パートナー募集</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}about/community-info.html"${currentAttribute('about/community-info.html')}>地域情報掲載募集</a></li>`,
+		`\t\t<li class="footer__item"><a href="${pathPrefix}privacy/"${currentAttribute('privacy/index.html')}>プライバシーポリシー</a></li>`,
 		'\t</ul>',
 		'\t</nav>',
 		'\t<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>',

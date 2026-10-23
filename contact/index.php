@@ -71,37 +71,37 @@ require __DIR__ . '/form.php';
 			<ul>
 				<li>
 					<a href="../" class="gnavi__item">
-						<span class="gnavi__engtxt">HOME</span>
+						<span class="gnavi__engtxt" lang="en">HOME</span>
 						トップページ
 					</a>
 				</li>
 				<li>
 					<a href="../news/" class="gnavi__item">
-						<span class="gnavi__engtxt">NEWS</span>
+						<span class="gnavi__engtxt" lang="en">NEWS</span>
 						最新情報
 					</a>
 				</li>
 				<li>
 					<a href="../about/" class="gnavi__item">
-						<span class="gnavi__engtxt">ABOUT</span>
+						<span class="gnavi__engtxt" lang="en">ABOUT</span>
 						谷津干潟とは
 					</a>
 				</li>
 				<li>
 					<a href="../guide/" class="gnavi__item">
-						<span class="gnavi__engtxt">GUIDE</span>
+						<span class="gnavi__engtxt" lang="en">GUIDE</span>
 						観察・散策ガイド
 					</a>
 				</li>
 				<li>
 					<a href="../access/" class="gnavi__item">
-						<span class="gnavi__engtxt">ACCESS</span>
+						<span class="gnavi__engtxt" lang="en">ACCESS</span>
 						アクセス
 					</a>
 				</li>
 				<li>
 					<a href="../contact/" class="gnavi__item active" aria-current="page">
-						<span class="gnavi__engtxt">CONTACT</span>
+						<span class="gnavi__engtxt" lang="en">CONTACT</span>
 						お問い合わせ
 					</a>
 				</li>
@@ -120,7 +120,7 @@ require __DIR__ . '/form.php';
 			<!-- メイン部分 -->
 			<div class="subpage">
 				<h1 class="pagetitle">
-			<span class="pagetitle__eng">Contact</span>
+			<span class="pagetitle__eng" lang="en">Contact</span>
 					<?= contact_escape($pageTitle) ?>
 				</h1>
 				
@@ -132,20 +132,20 @@ require __DIR__ . '/form.php';
                         <?php endforeach; ?>
                     </ol>
                     <?php if ($errors): ?>
-                    <div class="form-errors" role="alert">
+                    <div class="form-errors" id="form-errors" role="alert">
                         <p>以下をご確認ください。</p>
                         <ul><?php foreach ($errors as $error): ?><li><?= contact_escape($error) ?></li><?php endforeach; ?></ul>
                     </div>
                     <?php endif; ?>
                     <?php if ($step === 'input'): ?>
-				<form method="post" action="index.php">
+				<form method="post" action="index.php" aria-describedby="form-intro form-required<?= $errors ? ' form-errors' : '' ?>">
 					<input type="hidden" name="token" value="<?= contact_escape($token) ?>">
 					<div class="form-trap" aria-hidden="true"><label>この項目は空欄のままにしてください<input type="text" name="website_check" tabindex="-1" autocomplete="off"></label></div>
-					<p class="catch">
+					<p class="catch" id="form-intro">
 						谷津干潟ナビへのご意見・ご感想、掲載内容の訂正、掲載に関するお問い合わせは、こちらからお寄せください。<br>
 						当サイトは個人が運営する非公式の地域情報サイトです。施設の利用やイベントについては、各施設へ直接お問い合わせください。
 					</p>
-					<p class="form__text">
+					<p class="form__text" id="form-required">
 						<span>*</span> は必須項目です
 					</p>
 					<label class="form__item">
@@ -176,7 +176,7 @@ require __DIR__ . '/form.php';
 					</div>
 				</form>
                     <?php elseif ($step === 'confirm'): ?>
-                    <p class="catch">以下の内容で送信します。メールアドレスに誤りがないかご確認ください。</p>
+                    <p class="catch" id="confirmation-intro">以下の内容で送信します。メールアドレスに誤りがないかご確認ください。</p>
                     <dl class="form-confirm">
                         <?php foreach (['organization' => '企業名・組織名', 'name' => 'お名前', 'email' => 'メールアドレス', 'url' => 'URL・SNS', 'message' => 'ご意見・お問い合わせ内容'] as $key => $label): ?>
                         <div class="form__item">
@@ -185,7 +185,7 @@ require __DIR__ . '/form.php';
                         </div>
                         <?php endforeach; ?>
                     </dl>
-                    <form method="post" action="index.php" class="form-submit form-actions">
+                    <form method="post" action="index.php" class="form-submit form-actions" aria-describedby="confirmation-intro<?= $errors ? ' form-errors' : '' ?>">
                         <input type="hidden" name="token" value="<?= contact_escape($token) ?>">
                         <button type="submit" name="action" value="back" class="c-button form-back">戻って修正する</button>
                         <button type="submit" name="action" value="send" class="c-button">送信する</button>

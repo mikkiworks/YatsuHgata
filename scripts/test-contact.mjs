@@ -2,7 +2,7 @@
 // Requires @php-wasm/node and @php-wasm/universal (3.1.55). No real email is sent.
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {resolve, dirname} from 'node:path';
+import {resolve, dirname, posix} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const modules = resolve(process.argv[2] || 'node_modules');
@@ -24,12 +24,23 @@ function test_mail($to, $subject, $body, $headers, $params) {
     return $mode !== 'admin-fail' && !($mode === 'reply-fail' && isset($headers['Auto-Submitted']));
 }
 `;
-php.writeFile(resolve(dir,'form.php'), source.replace('<?php', '<?php\n' + stub).replace('@mail(', 'test_mail('));
-php.writeFile(resolve(dir,'index.php'), await readFile(resolve(root,'contact/index.php'),'utf8'));
+php.writeFile(posix.resolve(dir,'form.php'), source.replace('<?php', '<?php\n' + stub).replace('@mail(', 'test_mail('));
+php.writeFile(posix.resolve(dir,'index.php'), await readFile(resolve(root,'contact/index.php'),'utf8'));
 let cookie = '', ip = 1, count = 0;
 async function request(step = '', data) {
-    const r = await php.run({scriptPath: resolve(dir,'index.php'), relativeUri: '/contact/index.php' + (step ? '?step='+step : ''), method: data ? 'POST' : 'GET', headers: {'content-type':'application/x-www-form-urlencoded', cookie}, body: data ? new TextEncoder().encode(new URLSearchParams(data).toString()) : undefined, $_SERVER: {REMOTE_ADDR:'192.0.2.'+ip, HTTPS:'on'}});
+    const r = await php.run({scriptPath: posix.resolve(dir,'index.php'), relativeUri: '/contact/index.php' + (step ? '?step='+step : ''), method: data ? 'POST' : 'GET', headers: {'content-type':'application/x-www-form-urlencoded', cookie}, body: data ? new TextEncoder().encode(new URLSearchParams(data).toString()) : undefined, $_SERVER: {REMOTE_ADDR:'192.0.2.'+ip, HTTPS:'on'}});
     assert.equal(r.errors.replace(/Contact (?:admin mail|auto-reply) rejected: [A-F0-9]+\n/g, ''), '', r.errors);
+    if (r.text.includes('<html')) {
+        const ids = [...r.text.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+        assert.equal(new Set(ids).size, ids.length, 'Rendered IDs must be unique');
+        for (const match of r.text.matchAll(/\saria-describedby="([^"]+)"/g)) {
+            for (const id of match[1].split(/\s+/)) {
+                assert.ok(ids.includes(id), `Missing description target: ${id}`);
+            }
+        }
+        assert.equal((r.text.match(/aria-current="step"/g) || []).length, 1);
+        assert.match(r.text, /<span class="pagetitle__eng" lang="en">Contact<\/span>/);
+    }
     const set = r.headers['set-cookie'];
     if(set) cookie = (Array.isArray(set) ? set[0] : set).split(';')[0];
     return r;
@@ -44,7 +55,7 @@ async function age(seconds = 4) {
 async function fresh() {cookie=''; ip++; const r=await request(); await age(); return r;}
 const valid = () => ({organization:'谷津の会',name:'テスト太郎',email:`visitor${ip}@example.test`,url:'https://example.test/',message:'日本語の問い合わせ\n二行目 🐦',website_check:''});
 async function confirm(r, overrides = {}) {return request('', {...valid(),...overrides,token:token(r),action:'confirm'});}
-async function mails() {try {return JSON.parse(php.readFileAsText(resolve(dir,'mail.json')));} catch {return [];}}
+async function mails() {try {return JSON.parse(php.readFileAsText(posix.resolve(dir,'mail.json')));} catch {return [];}}
 function ok(label) {count++; console.log('PASS '+label);}
 try {
     let r=await fresh(); assert.match(r.text,/確認画面へ/); assert.match(cookie,/yatsuhigata_contact=/); ok('input and session');
@@ -66,8 +77,8 @@ try {
     let sent=await mails(); assert.equal(sent.length,2); assert.equal(sent[0].to,'contact@yatsuhigata.com'); assert.match(Buffer.from(sent[0].body,'base64').toString(),/二行目 🐦/); assert.doesNotMatch(Buffer.from(sent[0].body,'base64').toString(),/tampered/); assert.equal(sent[0].headers['Reply-To'],valid().email); assert.equal(sent[1].to,valid().email); assert.equal(sent[1].headers['Auto-Submitted'],'auto-replied'); assert.doesNotMatch(Buffer.from(sent[1].body,'base64').toString(),/二行目/); ok('two mails, fixed sender, reply-to, Japanese MIME, server-side draft');
     await request('',{action:'send',token:sendToken}); await request('complete'); assert.equal((await mails()).length,2); ok('duplicate submit and refresh');
     r=await request(); await confirm(r); c=await request('confirm'); await request('',{action:'send',token:token(c)}); c=await request('confirm'); assert.match(c.text,/短時間の送信/); assert.equal((await mails()).length,2); ok('rate limit');
-    r=await fresh(); await confirm(r); c=await request('confirm'); php.writeFile(resolve(dir,'mode'),'admin-fail'); await request('',{action:'send',token:token(c)}); r=await request('confirm'); assert.match(r.text,/送信できませんでした/); assert.equal((await mails()).length,3); ok('admin failure retains confirmation and skips reply');
-    r=await fresh(); await confirm(r); c=await request('confirm'); php.writeFile(resolve(dir,'mode'),'reply-fail'); await request('',{action:'send',token:token(c)}); r=await request('complete'); assert.match(r.text,/再送信は不要/); assert.equal((await mails()).length,5); ok('reply failure still completes');
+    r=await fresh(); await confirm(r); c=await request('confirm'); php.writeFile(posix.resolve(dir,'mode'),'admin-fail'); await request('',{action:'send',token:token(c)}); r=await request('confirm'); assert.match(r.text,/送信できませんでした/); assert.equal((await mails()).length,3); ok('admin failure retains confirmation and skips reply');
+    r=await fresh(); await confirm(r); c=await request('confirm'); php.writeFile(posix.resolve(dir,'mode'),'reply-fail'); await request('',{action:'send',token:token(c)}); r=await request('complete'); assert.match(r.text,/再送信は不要/); assert.equal((await mails()).length,5); ok('reply failure still completes');
     r=await fresh(); await age(3601); bad=await confirm(r); assert.match(bad.text,/有効期限が切れた/); assert.equal((await mails()).length,5); ok('expired session');
     r=await fresh(); const direct=await request('complete'); assert.equal(direct.httpStatusCode,303); assert.equal(location(direct),'index.php'); bad=await request('',{action:'send',token:token(r)}); assert.match(bad.text,/確認画面から送信/); ok('direct completion and unconfirmed send rejected');
     console.log(`${count} checks passed. No real email sent.`);

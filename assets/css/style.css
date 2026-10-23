@@ -1220,6 +1220,11 @@ h1, h2, h3, h4, h5, h6 {
 	vertical-align: top;
 }
 
+.topabout__lead {
+	margin: 0 0 24px 0;
+	font-weight: bold;
+}
+
 .topabout__img {
 	flex: 0 0 260px;
 	width: 260px;
@@ -1648,9 +1653,14 @@ h1, h2, h3, h4, h5, h6 {
 .living_item img {
 	border-radius: 4px;
 }
-.living_item span {
+.living_item span,
+.living_item figcaption {
 	padding: 0 0 0 4px;
 	font-size: 0.9rem;
+}
+
+.living_item figcaption {
+	display: inline;
 }
 
 
@@ -1932,7 +1942,8 @@ h1, h2, h3, h4, h5, h6 {
 	.is-instagram .history__img .note {
 		font-size: 11px;
 	}
-	.is-instagram .living_item span {
+	.is-instagram .living_item span,
+	.is-instagram .living_item figcaption {
 		font-size: 12px;
 	}
 

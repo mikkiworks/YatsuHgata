@@ -19,7 +19,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Hannari&family=Noto+Serif+JP:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/style.css?v=20261015-2">
+	<link rel="stylesheet" href="assets/css/style.css?v=20261023-1">
 	<link rel="canonical" href="https://yatsuhigata.com/">
 	<script type="application/ld+json">
 	{
@@ -73,37 +73,37 @@
 		<ul>
 			<li>
 				<a href="./" class="gnavi__item active" aria-current="page">
-					<span class="gnavi__engtxt">HOME</span>
+					<span class="gnavi__engtxt" lang="en">HOME</span>
 					トップページ
 				</a>
 			</li>
 			<li>
 				<a href="news/" class="gnavi__item">
-					<span class="gnavi__engtxt">NEWS</span>
+					<span class="gnavi__engtxt" lang="en">NEWS</span>
 					最新情報
 				</a>
 			</li>
 			<li>
 				<a href="about/" class="gnavi__item">
-					<span class="gnavi__engtxt">ABOUT</span>
+					<span class="gnavi__engtxt" lang="en">ABOUT</span>
 					谷津干潟とは
 				</a>
 			</li>
 			<li>
 				<a href="guide/" class="gnavi__item">
-					<span class="gnavi__engtxt">GUIDE</span>
+					<span class="gnavi__engtxt" lang="en">GUIDE</span>
 					観察・散策ガイド
 				</a>
 			</li>
 			<li>
 				<a href="access/" class="gnavi__item">
-					<span class="gnavi__engtxt">ACCESS</span>
+					<span class="gnavi__engtxt" lang="en">ACCESS</span>
 					アクセス
 				</a>
 			</li>
 			<li>
 				<a href="contact/" class="gnavi__item">
-					<span class="gnavi__engtxt">CONTACT</span>
+					<span class="gnavi__engtxt" lang="en">CONTACT</span>
 					お問い合わせ
 				</a>
 			</li>
@@ -121,14 +121,14 @@
 <main class="main">
 
 	<!-- キービジュアル -->
-	<section class="topvisual">
+	<section class="topvisual" aria-labelledby="top-title">
 		<div class="tidearea pc" aria-live="polite">
 			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
 			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
 			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
 		</div>
 
-		<h1 class="topvisual__title">
+		<h1 class="topvisual__title" id="top-title">
 			街のすぐそばにある<br>
 			<span class="topvisual__space">豊かな自然</span>
 		</h1>
@@ -148,9 +148,9 @@
 	</div>
 
 	<!-- 最新情報 -->
-	<section class="topblock">
-		<h2 class="topblock__title">
-			<span class="topblock__eng">NEWS</span>
+	<section class="topblock" aria-labelledby="news-title">
+		<h2 class="topblock__title" id="news-title">
+			<span class="topblock__eng" lang="en">NEWS</span>
 			最新情報
 		</h2>
 		<a class="topblock__rlink" href="news/">最新情報一覧</a>
@@ -195,17 +195,15 @@
 	</section>
 
 	<!-- 谷津干潟とは -->
-	<section class="topblock">
-		<h2 class="topblock__title">
-			<span class="topblock__eng">ABOUT</span>
+	<section class="topblock" aria-labelledby="about-title">
+		<h2 class="topblock__title" id="about-title">
+			<span class="topblock__eng" lang="en">ABOUT</span>
 			谷津干潟とは
 		</h2>
 
 		<div class="topabout">
 			<div class="topabout__text">
-				<p>
-					<strong>都会に残された、身近で貴重な自然</strong>
-				</p>
+				<h3 class="topabout__lead">都会に残された、身近で貴重な自然</h3>
 				<p>
 					谷津干潟は、千葉県習志野市の街なかに残された干潟です。
 				</p>
@@ -232,9 +230,9 @@
 	</section>
 
 	<!-- 観察・散策ガイド -->
-	<section class="topblock">
-		<h2 class="topblock__title">
-			<span class="topblock__eng">GUIDE</span>
+	<section class="topblock" aria-labelledby="guide-title">
+		<h2 class="topblock__title" id="guide-title">
+			<span class="topblock__eng" lang="en">GUIDE</span>
 			観察・散策ガイド
 		</h2>
 
@@ -253,9 +251,9 @@
 	</section>
 
 	<!-- アクセス -->
-	<section class="topblock">
-		<h2 class="topblock__title">
-			<span class="topblock__eng">ACCESS</span>
+	<section class="topblock" aria-labelledby="access-title">
+		<h2 class="topblock__title" id="access-title">
+			<span class="topblock__eng" lang="en">ACCESS</span>
 			アクセス
 		</h2>
 		<a class="topblock__rlink" href="access/">詳しいアクセス</a>
@@ -320,9 +318,9 @@
 	</section>
 
 	<!-- 協力パートナー -->
-	<section class="partner">
-		<h2 class="partner__title">
-			<span class="partner__eng">PARTNER</span>
+	<section class="partner" aria-labelledby="partner-title">
+		<h2 class="partner__title" id="partner-title">
+			<span class="partner__eng" lang="en">PARTNER</span>
 			協力パートナー
 		</h2>
 
@@ -366,4 +364,3 @@
 
 </body>
 </html>
-<!-- 

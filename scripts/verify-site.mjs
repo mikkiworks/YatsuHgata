@@ -8,6 +8,12 @@ const projectRoot = resolve(scriptDirectory, '..');
 
 const errors = [];
 const pageSources = new Map();
+const footerPages = new Map([
+	['about/master.html', 'about/master.html'],
+	['partner/index.html', 'partner/'],
+	['about/community-info.html', 'about/community-info.html'],
+	['privacy/index.html', 'privacy/']
+]);
 
 for (const [relativePath, activeSection] of pages) {
 	const filePath = resolve(projectRoot, relativePath);
@@ -26,6 +32,7 @@ for (const [relativePath, activeSection] of pages) {
 	check(relativePath, header.includes('id="gnavi" aria-label="メインナビゲーション"'), 'メインナビのARIA属性が一致しません');
 	check(relativePath, count(header, /class="gnavi__item(?: active)?"/g) === 6, 'メインナビは6項目必要です');
 	check(relativePath, count(header, /class="gnavi__engtxt"/g) === 6, 'メインナビの英語表記は6項目必要です');
+	check(relativePath, count(header, /<span class="gnavi__engtxt" lang="en">/g) === 6, 'メインナビの英語表記に lang="en" が必要です');
 	const firstNavigationLink = header.match(/<a [^>]*class="gnavi__item(?: active)?"[^>]*>[\s\S]*?<\/a>/)?.[0] ?? '';
 	check(relativePath, firstNavigationLink.includes(`href="${pathPrefix || './'}"`) && firstNavigationLink.includes('トップページ'), 'メインナビの先頭にトップページへのリンクが必要です');
 	check(relativePath, count(header, /data-tide-date/g) === 1, 'モバイル用の日付表示がありません');
@@ -44,6 +51,12 @@ for (const [relativePath, activeSection] of pages) {
 
 	check(relativePath, footer.includes('aria-label="フッターナビゲーション"'), 'フッターナビのARIA属性がありません');
 	check(relativePath, count(footer, /class="footer__item"/g) === 4, 'フッターナビは4項目必要です');
+	const footerCurrentLinks = footer.match(/<a\b[^>]*\baria-current="page"[^>]*>/g) ?? [];
+	const footerCurrentPath = footerPages.get(relativePath);
+	check(relativePath, footerCurrentLinks.length === (footerCurrentPath ? 1 : 0), 'フッターの現在地属性の件数が一致しません');
+	if (footerCurrentPath) {
+		check(relativePath, footerCurrentLinks[0]?.includes(`href="${pathPrefix}${footerCurrentPath}"`), 'フッターの現在地のリンク先が一致しません');
+	}
 	check(relativePath, count(footer, /出典：/g) === 1, '潮位表の出典はフッターに1回だけ必要です');
 	check(relativePath, footer.includes('気象庁「千葉」潮位表</a>（加工）'), '潮位表の出典表記が一致しません');
 
