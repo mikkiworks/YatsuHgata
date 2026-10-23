@@ -11,6 +11,7 @@ export const pages = new Map([
 	['contact/index.php', 'contact'],
 	['guide/index.html', 'guide'],
 	['guide/first-visit.html', 'guide'],
+	['guide/tides.html', 'guide'],
 	['guide/living.html', 'guide'],
 	['news/2026/0922.html', 'news'],
 	['news/2026/0923.html', 'news'],

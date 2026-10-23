@@ -1,0 +1,31 @@
+.tides-page [id] { scroll-margin-top: 90px; }
+.tides-page .pagetitle { font-size: clamp(24px, 3vw, 40px); line-height: 1.5; }
+.tides-note { margin: 12px 0; color: #555; font-size: 14px; line-height: 1.8; }
+.tides-jump { display: flex; gap: 24px; margin-top: 20px; }
+.tides-jump a { text-decoration: underline; text-underline-offset: 4px; }
+.tides-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 16px; }
+.tides-table caption { text-align: left; font-size: 14px; margin-bottom: 10px; }
+.tides-table th, .tides-table td { padding: 10px 8px; border-bottom: 1px solid #d6e8f6; text-align: center; vertical-align: middle; }
+.tides-table thead { background: #eaf4fc; }
+.tides-table th:first-child { width: 30%; }
+.tides-table tbody th { font-weight: normal; }
+.tides-table .is-today { background: #f1f8fe; }
+.tides-table .is-today th { font-weight: bold; }
+.tides-table .is-saturday th { color: #246b9f; }
+.tides-table .is-sunday th { color: #a63e3e; }
+.tides-table time { display: inline-block; white-space: nowrap; }
+.tides-table time + time { margin-left: 12px; }
+.tides-month-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 20px 0; }
+.tides-month-controls button, .tides-retry { border: 0; background: transparent; color: #246b9f; font: inherit; font-size: 14px; cursor: pointer; min-height: 40px; padding: 4px 8px; }
+.tides-month-controls button:disabled { color: #777; opacity: 0.5; cursor: default; }
+.tides-month-controls strong { text-align: center; }
+.tides-status { font-size: 14px; color: #555; }
+.tides-status:empty { display: none; }
+.tides-page button:focus-visible { outline: 2px solid #246b9f; outline-offset: 2px; }
+@media (max-width: 768px) {
+	.tides-table { font-size: 14px; }
+	.tides-table th, .tides-table td { padding: 8px 4px; }
+	.tides-table time { display: block; }
+	.tides-table time + time { margin-left: 0; }
+	.tides-month-controls strong { font-size: 16px; }
+}
