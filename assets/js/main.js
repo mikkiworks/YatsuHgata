@@ -4,9 +4,46 @@ if (/Instagram/i.test(navigator.userAgent)) {
 
 document.addEventListener('DOMContentLoaded', () => {
 	setupMobileMenu();
+	setupBackToTop();
 	updateEventStatuses();
 	loadTodayTides();
 });
+
+function setupBackToTop() {
+	const title = document.querySelector('main h1');
+	if (!title) return;
+	let button = document.querySelector('.back-to-top');
+	if (!button) {
+		button = document.createElement('button');
+		button.type = 'button';
+		button.className = 'back-to-top';
+		button.setAttribute('aria-label', 'ページ上部に戻る');
+		const arrow = document.createElement('span');
+		arrow.setAttribute('aria-hidden', 'true');
+		arrow.textContent = '↑';
+		button.append(arrow);
+		document.body.append(button);
+	}
+	if (!title.hasAttribute('tabindex')) title.tabIndex = -1;
+	button.hidden = false;
+
+	const updateVisibility = () => {
+		const visible = window.scrollY >= window.innerHeight;
+		button.classList.toggle('is-visible', visible);
+		button.inert = !visible;
+	};
+	window.addEventListener('scroll', updateVisibility, { passive: true });
+	window.addEventListener('resize', updateVisibility);
+	updateVisibility();
+
+	button.addEventListener('click', () => {
+		title.focus({ preventScroll: true });
+		window.scrollTo({
+			top: 0,
+			behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+		});
+	});
+}
 
 function updateEventStatuses(date = new Date()) {
 	const today = getJapanDateParts(date).key;
