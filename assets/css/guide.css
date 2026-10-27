@@ -70,6 +70,7 @@
 	}
 	.walking-guide .shopnavi {
 		flex-wrap: wrap;
+		margin-bottom: 30px;
 	}
 	.walking-guide .shopnavi a {
 		flex: 1 1 50%;
