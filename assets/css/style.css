@@ -602,7 +602,8 @@ h1, h2, h3, h4, h5, h6 {
 .subnavi__item {
 	display: flex;
 	flex: 1;
-	padding: 14px 0;
+	padding: 10px 12px;
+	border-radius: 4px;
 	border: 1px solid #A0D6FF;
     justify-content: center;
     align-items: center;
@@ -613,16 +614,37 @@ h1, h2, h3, h4, h5, h6 {
 	
 	@media (max-width: 1200px) {
 		padding: 10px;
-		border-radius: 3px;
 		font-size: 14px;
 	}
 }
 
 .subnavi .active {
-	border: 1px solid #ddd;
-	color: #333;
+	border: 1px solid #79b7e2;
+	background: #edf7fe;
+	color: #246b9f;
 }
 
+
+/* 上下共通サブナビゲーション */
+.main .subnavi__item {
+	line-height: 1.6;
+	text-align: center;
+}
+
+.main .subnavi--bottom {
+	margin: 40px auto 60px;
+}
+
+@media (max-width: 768px) {
+	.main .subnavi {
+		flex-wrap: wrap;
+	}
+
+	.main .subnavi__item {
+		flex: 1 1 calc(50% - 10px);
+		min-width: 0;
+	}
+}
 
 /**** 下層コンテンツ ****/
 
@@ -1426,14 +1448,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* カード全体 */
 .topguide__card {
-	display: flex;
-	align-items: flex-start;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 30px;
 	width: 100%;
 	margin: auto;
-	
+
 	@media (max-width: 768px) {
-		flex-direction: column;
+		grid-template-columns: 1fr;
 		gap: 24px;
 	}
 }
@@ -1469,6 +1491,13 @@ h1, h2, h3, h4, h5, h6 {
 .topguide__item:nth-child(2) {
 	background: url(../images/living_daisagi.jpg) no-repeat;
 	background-size: cover;
+}
+
+.topguide__item:nth-child(3) {
+	background: url(../images/point_east_02.jpg) center / cover no-repeat;
+}
+.topguide__item:nth-child(4) {
+	background: url(../images/rose-garden-spring-202405.jpg) center / cover no-repeat;
 }
 
 .topguide__item:hover {

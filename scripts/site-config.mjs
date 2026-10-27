@@ -10,6 +10,7 @@ export const pages = new Map([
 	['access/index.html', 'access'],
 	['contact/index.php', 'contact'],
 	['guide/index.html', 'guide'],
+	['guide/rose-garden.html', 'guide'],
 	['guide/first-visit.html', 'guide'],
 	['guide/tides.html', 'guide'],
 	['guide/living.html', 'guide'],
@@ -24,6 +25,8 @@ export const pages = new Map([
 	['news/2026/1011.html', 'news'],
 	['news/2026/1011-02.html', 'news'],
 	['news/2026/1023.html', 'news'],
+	['news/2026/1027.html', 'news'],
+	['news/2026/1027-02.html', 'news'],
 	['news/index.html', 'news'],
 	['partner/index.html', null],
 	['privacy/index.html', null]

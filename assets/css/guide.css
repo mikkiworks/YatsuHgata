@@ -23,7 +23,7 @@
 	color: #246b9f;
 }
 
-.walking-guide .content a:not(.shopnavi a) {
+.walking-guide .content a:not(.shopnavi a):not(.visit-link) {
 	text-decoration: underline;
 	text-underline-offset: 4px;
 }
