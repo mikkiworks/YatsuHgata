@@ -93,6 +93,10 @@
 	line-height: 1;
 }
 
+.visit-link[target="_blank"]::after {
+	content: '\e89e';
+}
+
 .visit-link:hover {
 	background: #dceffd;
 	border-color: #79b7e2;
