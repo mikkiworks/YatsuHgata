@@ -1297,6 +1297,18 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	overflow-wrap: anywhere;
 }
+@media (max-width: 768px) {
+	.news__details {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.news__details dt {
+		padding: 16px 10px 4px;
+		border-bottom: none;
+	}
+	.news__details dd {
+		padding: 0 10px 16px;
+	}
+}
 
 .news__list {
 	font-size: 16px;
