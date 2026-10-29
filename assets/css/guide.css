@@ -3,10 +3,6 @@
 	font-size: clamp(24px, 3vw, 40px);
 }
 
-.walking-guide [id] {
-	scroll-margin-top: 100px;
-}
-
 .walk-summary {
 	margin: 24px 0;
 	padding: 24px;
@@ -76,4 +72,8 @@
 		flex: 1 1 50%;
 		margin-bottom: 0;
 	}
+}
+
+.walking-guide .walk-intro-link {
+	margin-bottom: 48px;
 }

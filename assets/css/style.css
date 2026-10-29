@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* 共通：アンカー移動時の上余白 */
+[id] {
+	scroll-margin-top: 32px;
+}
+
 /* 共通：ページ上部に戻る */
 .back-to-top {
 	position: fixed;
@@ -1456,6 +1461,37 @@ h1, h2, h3, h4, h5, h6 {
 /**** TOP 観察・散策ガイド ****/
 .topguide__text {
 	margin: 24px 0 24px 0;
+}
+
+.topguide__first-visit {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+	padding: 20px 24px;
+	border: 1px solid #79b7e2;
+	border-radius: 6px;
+	background: #edf7fe;
+	color: var(--color-primary);
+	font-weight: bold;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background: #dceffc;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 3px;
+	}
+
+	@media (max-width: 768px) {
+		margin-bottom: 24px;
+		padding: 16px 20px;
+	}
 }
 
 /* カード全体 */
