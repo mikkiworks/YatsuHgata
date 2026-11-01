@@ -1356,6 +1356,14 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 2px;
 	font-size: 12px;
 }
+.news__cat--event {
+	background: #fff4d6;
+	color: #76551d;
+}
+.news__cat--notice {
+	background: #e9f1fa;
+	color: #2b587d;
+}
 .news__title {
 	margin: 2px 0 0 18px;
 }
