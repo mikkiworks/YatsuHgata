@@ -1,3 +1,22 @@
+@media (max-width: 768px) {
+	.first-visit-navi {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin-bottom: 30px;
+	}
+
+	.first-visit-navi a {
+		min-width: 0;
+		min-height: 44px;
+		margin: 0;
+		padding: 10px 8px;
+	}
+
+	.first-visit-navi a:first-child {
+		grid-column: 1 / -1;
+	}
+}
+
 .cafe-samples {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
