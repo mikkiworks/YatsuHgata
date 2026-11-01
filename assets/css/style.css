@@ -1564,11 +1564,11 @@ h1, h2, h3, h4, h5, h6 {
 .topguide__link {
 	display: block;
 	width: 82%;
-	padding: 6px 0;
+	padding: 16px 0;
 	border-radius: 3px;
-	background: rgba(255, 255, 255, 0.80);
+	background: rgba(255, 255, 255, 0.74);
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.20);
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: bold;
 	color: #333;
 	
@@ -1576,7 +1576,6 @@ h1, h2, h3, h4, h5, h6 {
 		font-size: 16px;
 	}
 	@media (max-width: 768px) {
-		width: 60%;
 		margin: 24px auto;
 		padding: 12px 0;
 	}
@@ -2107,6 +2106,7 @@ h1, h2, h3, h4, h5, h6 {
 	.is-instagram .topguide__text {
 		font-size: 12px;
 	}
+	.is-instagram .topguide__first-visit,
 	.is-instagram .topguide__link {
 		font-size: 12px;
 	}
