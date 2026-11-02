@@ -24,6 +24,8 @@
 }
 
 .cafe-sample {
+	display: flex;
+	flex-direction: column;
 	padding: 24px;
 	border: 1px solid #c3e2f7;
 	border-radius: 8px;
@@ -111,6 +113,33 @@
 	}
 	.visit-link {
 		padding: 16px 24px;
+	}
+}
+
+.cafe-sample__links {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 8px;
+	margin-top: auto;
+	padding-top: 20px;
+}
+
+.cafe-sample__links .visit-link {
+	justify-content: center;
+	gap: 4px;
+	padding: 12px 6px;
+	font-size: 14px;
+	text-align: center;
+	overflow-wrap: anywhere;
+}
+
+.cafe-sample__links .visit-link::after {
+	font-size: 16px;
+}
+
+@media (max-width: 768px) {
+	.cafe-sample__links .visit-link {
+		padding: 8px 6px;
 	}
 }
 
