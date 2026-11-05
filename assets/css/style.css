@@ -1536,76 +1536,81 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-/* 各カード */
+/* 各カード：写真の余白に文字を直接重ねる */
 .topguide__item {
 	position: relative;
 	display: flex;
-	flex-direction: column;
+	align-items: flex-end;
 	justify-content: flex-end;
-	align-items: center;
-	padding-bottom: 20px;
-	box-sizing: border-box;
-	flex: 1;
-	height: 200px;
 	min-width: 0;
-	background: #ccc;
+	height: 160px;
+	padding: 24px;
 	border-radius: 6px;
-	text-align: center;
-	transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-	
+	background: #ccc;
+	text-align: left;
+
 	@media (max-width: 768px) {
-		width: 100%;
-		padding: 8px 0;
-		height: auto;
+		height: clamp(120px, 45vw, 120px);
+		padding: 20px;
 	}
 }
 
 .topguide__item:nth-child(1) {
-	background: url(../images/top_guide_point.jpg) no-repeat;
-	background-size: cover;
+	background: url(../images/top_guide_point.jpg) left center / cover no-repeat;
 }
+
 .topguide__item:nth-child(2) {
-	background: url(../images/living_daisagi.jpg) no-repeat;
-	background-size: cover;
+	background: url(../images/living_daisagi.jpg) center top / cover no-repeat;
 }
 
 .topguide__item:nth-child(3) {
 	background: url(../images/point_east_02.jpg) center / cover no-repeat;
 }
+
 .topguide__item:nth-child(4) {
 	background: url(../images/rose-garden-spring-202405.jpg) center / cover no-repeat;
 }
 
-.topguide__item:hover {
-	opacity: 0.7;
-}
-
-/* カード内ボタン */
 .topguide__link {
-	display: block;
-	width: 82%;
-	padding: 16px 0;
-	border-radius: 3px;
-	background: rgba(255, 255, 255, 0.74);
-	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.20);
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: bold;
-	color: #333;
-	
-	@media (max-width: 1200px) {
+	line-height: 1.5;
+	color: #fff;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 5px;
+
+	@media (max-width: 768px) {
 		font-size: 16px;
 	}
-	@media (max-width: 768px) {
-		margin: 24px auto;
-		padding: 12px 0;
-	}
 }
 
-/* カード全体をクリック領域にする */
+.topguide__item:nth-child(1) .topguide__link,
+.topguide__item:nth-child(4) .topguide__link {
+	color: #fff;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85), 0 0 12px rgba(0, 0, 0, 0.45);
+}
+
+/* カード全体のクリック領域とキーボードフォーカス */
 .topguide__link::after {
 	content: '';
 	position: absolute;
 	inset: 0;
+	border-radius: inherit;
+}
+
+.topguide__item:hover .topguide__link {
+	text-decoration-line: underline;
+}
+
+.topguide__link:focus-visible {
+	outline: none;
+	text-decoration-line: underline;
+}
+
+.topguide__link:focus-visible::after {
+	outline: 3px solid #1769A3;
+	outline-offset: 4px;
 }
 
 
