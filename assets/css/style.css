@@ -2082,6 +2082,23 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @media (max-width: 768px) {
+	.is-instagram .top-tides {
+		margin-right: 16px;
+		margin-left: 16px;
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+	.is-instagram .top-tides__title {
+		font-size: 12px;
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+	}
+	.is-instagram .top-tides .tide-controls {
+		gap: 2px;
+	}
+	.is-instagram .top-tides .tide-controls__button {
+		width: 24px;
+	}
 	.is-instagram .topvisual__title {
 		font-size: 16px !important;
 	}
@@ -2117,6 +2134,11 @@ h1, h2, h3, h4, h5, h6 {
 	
 	.is-instagram .topabout__text {
 		font-size: 12px;
+	}
+	.is-instagram .topabout__lead {
+		font-size: 12px;
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
 	}
 	
 	.is-instagram .topabout__link a {
