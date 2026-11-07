@@ -32,6 +32,23 @@
 	</script>
 	<script src="../assets/js/main.js" defer></script>
 	<script type="module" src="../assets/js/tides-page.js?v=20261023-1"></script>
+	<!-- 自分のブラウザをGA4の計測から除外（analytics_off=1で登録、0で解除） -->
+	<script>
+	  (() => {
+	    const measurementId = 'G-1NTGB4XW62';
+	    const storageKey = 'yatsuhigata_ga_exclude';
+	    const setting = new URLSearchParams(location.search).get('analytics_off');
+	    let excluded = setting === '1';
+	    try {
+	      if (setting === '1') localStorage.setItem(storageKey, '1');
+	      if (setting === '0') localStorage.removeItem(storageKey);
+	      excluded = excluded || (setting !== '0' && localStorage.getItem(storageKey) === '1');
+	    } catch (error) {
+	      // 保存できない場合も、このページで指定した除外は有効にする。
+	    }
+	    if (excluded) window[`ga-disable-${measurementId}`] = true;
+	  })();
+	</script>
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NTGB4XW62"></script>
 	<script>
