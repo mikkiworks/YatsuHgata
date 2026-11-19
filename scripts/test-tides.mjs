@@ -13,6 +13,7 @@ function createView(today, fetcher = async (url) => ({ ok: true, json: async () 
 	function element() {
 		return {
 			textContent: '',
+			replaceChildren(...children) { this.children = children; this.textContent = children.map((child) => typeof child === 'string' ? child : child.textContent).join(''); },
 			parentElement: { querySelector: () => ({ after(link) { links.push(link); } }) }
 		};
 	}
@@ -41,6 +42,9 @@ for (const today of ['2026-10-23', '2026-12-31', '2027-01-01']) {
 	});
 	await view.start();
 	assert.ok(view.label().startsWith('今日 '));
+	assert.ok(!view.label().includes('の満干時間'));
+	assert.equal(view.fields['[data-tide-high]'][0].children[0].textContent, '満潮');
+	assert.equal(view.fields['[data-tide-low]'][0].children[0].textContent, '干潮');
 	assert.ok(view.fields['[data-tide-date]'].every((field) => field.textContent === view.label()));
 	for (const kind of ['high', 'low']) {
 		const prefix = kind === 'high' ? '満潮' : '干潮';

@@ -206,7 +206,7 @@ async function loadTodayTides() {
 	const date = new Date();
 	const { key, year, month, day } = getJapanDateParts(date);
 	const weekday = new Intl.DateTimeFormat('ja-JP', { timeZone: 'Asia/Tokyo', weekday: 'short' }).format(date);
-	setText('[data-tide-date]', `今日 ${Number(month)}月${Number(day)}日（${weekday}）の満干時間`);
+	setText('[data-tide-date]', `今日 ${Number(month)}月${Number(day)}日（${weekday}）`);
 
 	dateElements.forEach((title) => {
 		const link = document.createElement('a');
@@ -222,12 +222,12 @@ async function loadTodayTides() {
 		const tideData = await response.json();
 		const dayData = tideData.days?.[key];
 		if (!dayData) throw new Error(`${key}の潮位データがありません`);
-		setText('[data-tide-high]', `満潮　${formatTideTimes(dayData.high)}`);
-		setText('[data-tide-low]', `干潮　${formatTideTimes(dayData.low)}`);
+		setTideTime('[data-tide-high]', '満潮', formatTideTimes(dayData.high));
+		setTideTime('[data-tide-low]', '干潮', formatTideTimes(dayData.low));
 	} catch (error) {
 		console.warn(error);
-		setText('[data-tide-high]', '満潮　取得できません');
-		setText('[data-tide-low]', '干潮　取得できません');
+		setTideTime('[data-tide-high]', '満潮', '取得できません');
+		setTideTime('[data-tide-low]', '干潮', '取得できません');
 	}
 }
 
@@ -271,5 +271,13 @@ function formatTideTimes(events = []) {
 function setText(selector, text) {
 	document.querySelectorAll(selector).forEach((element) => {
 		element.textContent = text;
+	});
+}
+
+function setTideTime(selector, label, time) {
+	document.querySelectorAll(selector).forEach((element) => {
+		const heading = document.createElement('strong');
+		heading.textContent = label;
+		element.replaceChildren(heading, `　${time}`);
 	});
 }
