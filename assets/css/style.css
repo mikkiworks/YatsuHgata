@@ -1435,7 +1435,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .topabout__img img {
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 4px;
 	
 	@media (max-width: 768px) {
 		aspect-ratio: 3 / 1;
@@ -1813,7 +1813,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /**** 周辺のお店 ****/
 
-/* カテゴリへのアンカー */
+/* ページ内の目次・アンカー */
 .page-anchor-navi {
 	display: flex;
 	flex-direction: column;
@@ -1824,6 +1824,13 @@ h1, h2, h3, h4, h5, h6 {
 	text-size-adjust: 100%;
 }
 
+.page-anchor-navi__title {
+	margin: 0 0 4px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.6;
+}
+
 .page-anchor-navi a {
 	position: relative;
 	display: flex;
@@ -1831,8 +1838,10 @@ h1, h2, h3, h4, h5, h6 {
 	justify-content: flex-start;
 	min-width: 0;
 	min-height: 44px;
-	padding: 10px 20px;
-	border: 1px solid #eee;
+	padding: 10px 44px 10px 20px;
+	border: 1px solid #dcecf8;
+	border-radius: 3px;
+	background: var(--color-bg-base);
 	font-size: 14px;
 	line-height: 1.6;
 	text-align: left;
@@ -1851,7 +1860,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-anchor-navi a:hover {
-	background: var(--color-bg-base);
+	background: #e3f1fc;
 }
 
 .page-anchor-navi a:focus-visible {
