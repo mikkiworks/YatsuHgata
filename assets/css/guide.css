@@ -48,6 +48,15 @@
 }
 
 @media (max-width: 768px) {
+	.walking-guide.guide-page .pagetitle {
+		font-size: clamp(20px, 6vw, 26px);
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+	}
+	.walk-heading__title,
+	.walk-heading__points {
+		white-space: nowrap;
+	}
 	.walk-heading__points,
 	.walk-summary__time > span {
 		display: block;
