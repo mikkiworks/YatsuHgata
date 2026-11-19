@@ -1814,6 +1814,51 @@ h1, h2, h3, h4, h5, h6 {
 /**** 周辺のお店 ****/
 
 /* カテゴリへのアンカー */
+.page-anchor-navi {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+	margin-bottom: 30px;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+.page-anchor-navi a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-width: 0;
+	min-height: 44px;
+	padding: 10px 20px;
+	border: 1px solid #eee;
+	font-size: 14px;
+	line-height: 1.6;
+	text-align: left;
+	text-decoration: none;
+}
+
+.page-anchor-navi a::after {
+	font-family: 'Material Symbols Outlined';
+	content: '\f4b6';
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: var(--color-primary);
+}
+
+.page-anchor-navi a:hover {
+	background: var(--color-bg-base);
+}
+
+.page-anchor-navi a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
 .shopnavi {
 	display: flex;
 	width: 100%;
