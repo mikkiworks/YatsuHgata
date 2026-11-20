@@ -759,6 +759,16 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+/* 概要ページ：SPでは見出しの次に写真を配置 */
+@media (max-width: 768px) {
+	.section__imgarea.right.section__imgarea--photo-first-sp {
+		flex-direction: column-reverse;
+	}
+	.section__imgarea--photo-first-sp img {
+		margin: 0;
+	}
+}
+
 /* 見出し系 */
 .section__h2 {
 	position: relative;

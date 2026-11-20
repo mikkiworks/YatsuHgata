@@ -16,11 +16,11 @@
 		observer?.disconnect();
 		for (const element of animations.keys()) show(element);
 	};
-	const animate = (element, distance, duration, paused = false) => {
+	const animate = (element, distance, duration, paused = false, delay = 0) => {
 		const animation = element.animate([
 			{ opacity: 0, translate: `0 ${distance}px` },
 			{ opacity: 1, translate: '0 0' }
-		], { duration, easing: 'ease-out', fill: 'both' });
+		], { duration, delay, easing: 'ease-out', fill: 'both' });
 		animations.set(element, animation);
 		animation.onfinish = () => show(element);
 		if (paused) animation.pause();
@@ -35,7 +35,23 @@
 			}
 		}, { threshold: 0 });
 
-		document.querySelectorAll('.topvisual__photo, .topvisual__title, main .pagetitle, main .tidearea, .top-tides').forEach((element) => {
+		document.querySelectorAll('.topvisual__photo > img').forEach((element, index) => {
+			const animation = element.animate([
+				{ opacity: 0, translate: '0 6px' },
+				{ opacity: 1, translate: '0 0' }
+			], {
+				duration: 1000,
+				delay: index * 300,
+				easing: 'ease-out',
+				fill: 'both'
+			});
+			animations.set(element, animation);
+			animation.onfinish = () => show(element);
+		});
+		document.querySelectorAll('.topvisual__title').forEach((element) => {
+			animate(element, 6, 1200, false, 1600);
+		});
+		document.querySelectorAll('main .pagetitle, main .tidearea, .top-tides').forEach((element) => {
 			animate(element, 6, 800);
 		});
 		const sections = new Set(document.querySelectorAll('main > .topblock, main > .partner, main .formbox'));
