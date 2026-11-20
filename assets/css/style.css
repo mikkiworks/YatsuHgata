@@ -653,6 +653,12 @@ h1, h2, h3, h4, h5, h6 {
 	white-space: nowrap;
 }
 
+@media (min-width: 769px) {
+	.main .subnavi__item {
+		padding: 6px 12px;
+	}
+}
+
 .main .subnavi--bottom {
 	margin: 40px auto 60px;
 }
@@ -1340,6 +1346,10 @@ h1, h2, h3, h4, h5, h6 {
 .news__cat--event {
 	background: #fff4d6;
 	color: #76551d;
+}
+.news__cat--region {
+	background: #e8f3eb;
+	color: #28623d;
 }
 .news__cat--notice {
 	background: #e9f1fa;
@@ -2296,3 +2306,6 @@ h1, h2, h3, h4, h5, h6 {
  background: var(--color-primary);
  color: #fff;
 }
+
+/* 最新情報のカテゴリ */
+.news__item[hidden] { display: none; }

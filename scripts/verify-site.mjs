@@ -38,7 +38,7 @@ for (const [relativePath, activeSection] of pages) {
 	check(relativePath, count(header, /data-tide-date/g) === 1, 'モバイル用の日付表示がありません');
 	check(relativePath, count(header, /data-tide-high/g) === 1, 'モバイル用の満潮表示がありません');
 	check(relativePath, count(header, /data-tide-low/g) === 1, 'モバイル用の干潮表示がありません');
-	check(relativePath, source.includes(`<script src="${pathPrefix}assets/js/main.js" defer></script>`), 'main.js の参照先が一致しません');
+	check(relativePath, new RegExp(`<script src="${pathPrefix.replaceAll('.', '\\.')}assets/js/main\\.js(?:\\?v=[\\w-]+)?" defer></script>`).test(source), 'main.js の参照先が一致しません');
 
 	const activeLinks = header.match(/<a [^>]*class="gnavi__item active"[^>]*>/g) ?? [];
 	if (activeSection || relativePath === 'index.html') {
