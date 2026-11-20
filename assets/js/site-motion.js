@@ -1,4 +1,4 @@
-// トップページだけの控えめな表示アニメーション。
+// 全ページ共通の控えめな表示アニメーション。
 (() => {
 	const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 	if (motion.matches || !Element.prototype.animate || !('IntersectionObserver' in window)) return;
@@ -35,15 +35,21 @@
 			}
 		}, { threshold: 0 });
 
-		document.querySelectorAll('.topvisual__photo, .topvisual__title').forEach((element) => {
+		document.querySelectorAll('.topvisual__photo, .topvisual__title, main .pagetitle, main .tidearea, .top-tides').forEach((element) => {
 			animate(element, 6, 800);
 		});
-		document.querySelectorAll('main > .topblock, main > .partner').forEach((element) => {
+		const sections = new Set(document.querySelectorAll('main > .topblock, main > .partner, main .formbox'));
+		document.querySelectorAll('main .content').forEach((content) => {
+			const children = content.querySelectorAll(':scope > section');
+			if (children.length) children.forEach((section) => sections.add(section));
+			else sections.add(content);
+		});
+		sections.forEach((element) => {
 			// 途中位置から開いた場合、通過済みの内容は隠さない。
 			const bounds = element.getBoundingClientRect();
 			if (bounds.bottom <= 0) return;
 			const belowViewport = bounds.top >= window.innerHeight;
-			animate(element, 8, 400, belowViewport);
+			animate(element, 8, 700, belowViewport);
 			if (belowViewport) observer.observe(element);
 		});
 		document.addEventListener('focusin', (event) => {

@@ -27,6 +27,7 @@ require __DIR__ . '/form.php';
 	
 	<!-- 外部JS -->
 	<script src="../assets/js/main.js" defer></script>
+	<script src="../assets/js/site-motion.js?v=20261120-1" defer></script>
 
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NTGB4XW62"></script>

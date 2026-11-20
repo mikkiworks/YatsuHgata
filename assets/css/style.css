@@ -1774,16 +1774,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ページ内の目次・アンカー */
 .page-anchor-navi {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 8px;
 	width: 100%;
 	margin-bottom: 30px;
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
+
+	@media (max-width: 768px) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (min-width: 769px) {
+	.page-anchor-navi--access {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
 }
 
 .page-anchor-navi__title {
+	grid-column: 1 / -1;
 	margin: 0 0 4px;
 	font-size: 14px;
 	font-weight: 600;
