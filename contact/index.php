@@ -120,10 +120,10 @@ require __DIR__ . '/form.php';
 
 			<!-- メイン部分 -->
 			<div class="subpage">
-				<h1 class="pagetitle">
-			<span class="pagetitle__eng" lang="en">Contact</span>
-					<?= contact_escape($pageTitle) ?>
-				</h1>
+				<div class="pagetitle">
+					<span class="pagetitle__eng" lang="en">Contact</span>
+					<h1 class="pagetitle__heading"><?= contact_escape($pageTitle) ?></h1>
+				</div>
 				
 				<!-- 本文 -->
                 <div class="formbox">
