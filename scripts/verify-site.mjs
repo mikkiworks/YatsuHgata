@@ -11,7 +11,6 @@ const pageSources = new Map();
 const footerPages = new Map([
 	['about/master.html', 'about/master.html'],
 	['partner/index.html', 'partner/'],
-	['about/community-info.html', 'about/community-info.html'],
 	['privacy/index.html', 'privacy/']
 ]);
 
@@ -50,7 +49,7 @@ for (const [relativePath, activeSection] of pages) {
 	}
 
 	check(relativePath, footer.includes('aria-label="フッターナビゲーション"'), 'フッターナビのARIA属性がありません');
-	check(relativePath, count(footer, /class="footer__item"/g) === 4, 'フッターナビは4項目必要です');
+	check(relativePath, count(footer, /class="footer__item"/g) === 3, 'フッターナビは3項目必要です');
 	const footerCurrentLinks = footer.match(/<a\b[^>]*\baria-current="page"[^>]*>/g) ?? [];
 	const footerCurrentPath = footerPages.get(relativePath);
 	check(relativePath, footerCurrentLinks.length === (footerCurrentPath ? 1 : 0), 'フッターの現在地属性の件数が一致しません');

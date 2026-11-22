@@ -100,7 +100,6 @@ function renderFooter(pathPrefix, relativePath) {
 		'\t<ul class="footer__list">',
 		`\t\t<li class="footer__item"><a href="${pathPrefix}about/master.html"${currentAttribute('about/master.html')}>管理人について</a></li>`,
 		`\t\t<li class="footer__item"><a href="${pathPrefix}partner/"${currentAttribute('partner/index.html')}>協力パートナー募集</a></li>`,
-		`\t\t<li class="footer__item"><a href="${pathPrefix}about/community-info.html"${currentAttribute('about/community-info.html')}>地域情報掲載募集</a></li>`,
 		`\t\t<li class="footer__item"><a href="${pathPrefix}privacy/"${currentAttribute('privacy/index.html')}>プライバシーポリシー</a></li>`,
 		'\t</ul>',
 		'\t</nav>',
