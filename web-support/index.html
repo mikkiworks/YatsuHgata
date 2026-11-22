@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="お店や活動の情報を、わかりやすく伝えるお手伝い。ホームページの新規制作、既存サイトの更新・修正、スマートフォン表示の改善などをご相談いただけます。">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="谷津干潟ナビ">
+	<meta property="og:title" content="ホームページ制作・更新のご相談｜谷津干潟ナビ">
+	<meta property="og:description" content="お店や活動の情報を、わかりやすく伝えるお手伝い。ホームページの新規制作、既存サイトの更新・修正、スマートフォン表示の改善などをご相談いただけます。">
+	<meta property="og:image" content="https://yatsuhigata.com/assets/images/ogp.png">
+	<meta property="og:url" content="https://yatsuhigata.com/web-support/">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="ホームページ制作・更新のご相談｜谷津干潟ナビ">
+	<meta name="twitter:description" content="お店や活動の情報を、わかりやすく伝えるお手伝い。ホームページの新規制作、既存サイトの更新・修正、スマートフォン表示の改善などをご相談いただけます。">
+	<meta name="twitter:image" content="https://yatsuhigata.com/assets/images/ogp.png">
+	<title>ホームページ制作・更新のご相談｜谷津干潟ナビ</title>
+	<link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Hannari&family=Noto+Serif+JP:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/style.css?v=20261120-news-2">
+	<link rel="stylesheet" href="../assets/css/first-visit.css?v=20261119-6">
+	<link rel="canonical" href="https://yatsuhigata.com/web-support/">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "谷津干潟ナビ",
+		"url": "https://yatsuhigata.com/"
+	}
+	</script>
+	<script src="../assets/js/main.js" defer></script>
+	<script src="../assets/js/site-motion.js?v=20261120-1" defer></script>
+	<!-- 自分のブラウザをGA4の計測から除外（analytics_off=1で登録、0で解除） -->
+	<script>
+	  (() => {
+	    const measurementId = 'G-1NTGB4XW62';
+	    const storageKey = 'yatsuhigata_ga_exclude';
+	    const setting = new URLSearchParams(location.search).get('analytics_off');
+	    let excluded = setting === '1';
+	    try {
+	      if (setting === '1') localStorage.setItem(storageKey, '1');
+	      if (setting === '0') localStorage.removeItem(storageKey);
+	      excluded = excluded || (setting !== '0' && localStorage.getItem(storageKey) === '1');
+	    } catch (error) {
+	      // 保存できない場合も、このページで指定した除外は有効にする。
+	    }
+	    if (excluded) window[`ga-disable-${measurementId}`] = true;
+	  })();
+	</script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NTGB4XW62"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-1NTGB4XW62');
+	</script>
+</head>
+
+<body>
+
+<!-- Wrapper -->
+<div class="wrapper">
+
+<!-- サイドバー/ハンバーガーメニュー -->
+<header class="sidebar">
+
+	<!-- SP用ハンバーガーボタン -->
+	<button type="button" class="sidebar__toggle" id="js-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnavi">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<!-- ロゴ -->
+	<a href="../" class="sidebar__logo">
+		<img class="logo__item" src="../assets/images/logo.png" alt="谷津干潟ナビ">
+	</a>
+
+	<!-- グローバルナビ -->
+	<nav class="gnavi" id="gnavi" aria-label="メインナビゲーション">
+
+		<!-- SP用満干時間 -->
+		<div class="tidearea sp" aria-live="polite">
+			<strong class="tidearea__title" data-tide-date>今日の満干時間</strong>
+			<span class="tidearea__time" data-tide-high>満潮　読み込み中</span>
+			<span class="tidearea__time" data-tide-low>干潮　読み込み中</span>
+		</div>
+
+		<ul>
+			<li>
+				<a href="../" class="gnavi__item">
+					<span class="gnavi__engtxt" lang="en">HOME</span>
+					トップページ
+				</a>
+			</li>
+			<li>
+				<a href="../news/" class="gnavi__item">
+					<span class="gnavi__engtxt" lang="en">NEWS</span>
+					最新情報
+				</a>
+			</li>
+			<li>
+				<a href="../about/" class="gnavi__item">
+					<span class="gnavi__engtxt" lang="en">ABOUT</span>
+					谷津干潟とは
+				</a>
+			</li>
+			<li>
+				<a href="../guide/" class="gnavi__item">
+					<span class="gnavi__engtxt" lang="en">GUIDE</span>
+					観察・散策ガイド
+				</a>
+			</li>
+			<li>
+				<a href="../access/" class="gnavi__item">
+					<span class="gnavi__engtxt" lang="en">ACCESS</span>
+					アクセス
+				</a>
+			</li>
+			<li>
+				<a href="../contact/" class="gnavi__item">
+					<span class="gnavi__engtxt" lang="en">CONTACT</span>
+					お問い合わせ
+				</a>
+			</li>
+		</ul>
+		<a href="https://www.instagram.com/yatsuhigatanavi/" class="sidebar__instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram（新しいタブで開く）">
+			<img src="../assets/images/instagram.png" alt="Instagram" width="28" height="28">
+		</a>
+	</nav>
+</header>
+
+<!-- 右側全体 -->
+<div class="rightside">
+
+<!-- コンテンツ -->
+<main class="main">
+
+	<!-- コンテンツ全体 -->
+	<div class="subpage">
+		<h1 class="pagetitle">
+			<span class="pagetitle__eng" lang="en">Web Support</span>
+			ホームページ制作・更新のご相談
+		</h1>
+
+		<article class="content">
+			<section class="section">
+			<h2 class="section__h2">お店や活動の情報を、わかりやすく伝えるお手伝い。</h2>
+			<p class="section__text">新しくホームページを作りたい。今あるページの情報を更新したい。スマートフォンでも見やすくしたい。</p>
+			<p class="section__text"><strong>ホームページの新規制作・更新・修正</strong>などのご相談を承ります。地域のお店・事業者・団体の皆さまをはじめ、個人の活動についても、目的やご予算に合わせてご提案します。</p>
+			<div class="visit-links"><a class="visit-link" href="../contact/">制作・更新について相談する</a></div>
+			</section>
+			<section class="section">
+			<h2 class="section__h2">このようなお困りごとはありませんか？</h2>
+			<ul class="subpage__list">
+			<li class="subpage__list-item">お店や活動を紹介するホームページがほしい</li>
+			<li class="subpage__list-item">営業時間や料金、写真などの情報を変更したい</li>
+			<li class="subpage__list-item">スマートフォンで見ると文字が小さく、読みにくい</li>
+			<li class="subpage__list-item">ページの内容を整理して、必要な情報を伝えやすくしたい</li>
+			<li class="subpage__list-item">更新を頼める相手がいない</li>
+			</ul>
+			<p class="section__text">新規制作だけでなく、既存サイトの修正や、<strong>一部のページの更新についてもご相談ください。</strong></p>
+			</section>
+			<section class="section">
+			<h2 class="section__h2">お手伝いできること</h2>
+			<h3 class="section__h3">ホームページの新規制作</h3>
+			<p class="section__text">お店・事業・団体・個人の活動などを紹介するホームページを制作します。掲載する情報の整理から、ページ構成、デザイン、公開までお手伝いします。</p>
+			<h3 class="section__h3">既存ホームページの更新・修正</h3>
+			<p class="section__text">文章や写真の差し替え、営業時間・料金の変更、お知らせの掲載などに対応します。</p>
+			<p class="section__text">既存サイトの仕組みや管理状況によっては、対応が難しい場合があります。まずはサイトのURLとご希望をお知らせください。</p>
+			<h3 class="section__h3">見やすさ・使いやすさの改善</h3>
+			<p class="section__text">スマートフォンでの表示や文字の読みやすさ、情報の並び方、お問い合わせまでの導線などを見直します。</p>
+			</section>
+			<section class="section">
+			<h2 class="section__h2">制作を担当する人</h2>
+			<p class="section__text">谷津干潟ナビを制作・運営しているMiKKiです。谷津エリアに暮らしながら、Webデザイナー・コーダーとして活動しています。</p>
+			<p class="section__text">谷津干潟ナビの構成・デザイン・制作・更新を行っています。訪れる方に必要な情報が伝わるよう、情報の整理やスマートフォンでの読みやすさを考え、改善を重ねています。ホームページについての<strong>ご相談も、私が直接お伺いします。</strong></p>
+			<p class="section__text"><a href="../about/master.html">管理人について詳しく見る</a></p>
+			</section>
+			<section class="section">
+			<h2 class="section__h2">ご相談から公開まで</h2>
+			<ol class="subpage__list">
+			<li class="subpage__list-item"><strong>お問い合わせ</strong><br>ご希望やお困りごとをお知らせください。内容がまとまっていなくても大丈夫です。</li>
+			<li class="subpage__list-item"><strong>内容の確認・お見積もり</strong><br>対応範囲や必要な素材、スケジュールを確認し、お見積もりをご案内します。</li>
+			<li class="subpage__list-item"><strong>制作・修正</strong><br>お見積もりや条件にご同意いただいてから、制作を進めます。文章や写真などは、ご相談のうえでご用意いただきます。</li>
+			<li class="subpage__list-item"><strong>ご確認・公開</strong><br>仕上がりをご確認いただき、必要な調整を行って公開します。</li>
+			</ol>
+			</section>
+			<section class="section">
+			<h2 class="section__h2">料金について</h2>
+			<p class="section__text">料金は、ページ数や作業内容によって異なります。ご希望を伺ったうえで、<strong>個別にお見積もりします。</strong></p>
+			<p class="section__text">ご予算が決まっている場合は、お問い合わせの際にお知らせください。ご希望とご予算に合わせて、対応する内容をご相談します。</p>
+			</section>
+			<section class="section" id="inquiry">
+			<h2 class="section__h2">お問い合わせ</h2>
+			<p class="section__text">新規制作から、文章・写真の差し替えなどの小さな更新まで、まずはご相談ください。</p>
+			<p class="section__text">お問い合わせフォームの「お問い合わせ内容」に「Web制作・更新の相談」と書き、以下の内容をわかる範囲でお知らせください。</p>
+			<ul class="subpage__list">
+			<li class="subpage__list-item">お名前・事業名や団体名</li>
+			<li class="subpage__list-item">ご相談内容</li>
+			<li class="subpage__list-item">現在のホームページのURL（ある場合）</li>
+			<li class="subpage__list-item">ご希望の時期</li>
+			<li class="subpage__list-item">ご予算の目安（任意）</li>
+			</ul>
+			<p class="section__text">いただいた内容を確認し、メールでお返事します。</p>
+			<div class="visit-links"><a class="visit-link" href="../contact/">制作・更新について相談する</a></div>
+			</section>
+		</article>
+	</div>
+
+</main>
+	
+<footer class="footer">
+	<a href="../" class="footer__logo">
+		<img src="../assets/images/logo.png" alt="谷津干潟ナビ">
+	</a>
+	<nav aria-label="フッターナビゲーション">
+	<ul class="footer__list">
+		<li class="footer__item"><a href="../about/master.html">管理人について</a></li>
+		<li class="footer__item"><a href="../partner/">協力パートナー募集</a></li>
+		<li class="footer__item"><a href="../web-support/" aria-current="page">Web制作・更新のご相談</a></li>
+		<li class="footer__item"><a href="../privacy/">プライバシーポリシー</a></li>
+	</ul>
+	</nav>
+	<small class="footer__source">出典：<a href="https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=QL" target="_blank" rel="noopener noreferrer">気象庁「千葉」潮位表</a>（加工）</small>
+	<small class="footer__copy">Copyright &copy; YATSUHIGATA NAVI. All rights reserved.</small>
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>

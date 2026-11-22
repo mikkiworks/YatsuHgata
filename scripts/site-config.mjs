@@ -45,6 +45,7 @@ export const pages = new Map([
 	['news/index.html', 'news'],
 	['news/page2.html', 'news'],
 	['partner/index.html', null],
+	['web-support/index.html', null],
 	['privacy/index.html', null]
 ]);
 

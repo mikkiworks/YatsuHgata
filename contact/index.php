@@ -214,6 +214,7 @@ require __DIR__ . '/form.php';
 			<ul class="footer__list">
 				<li class="footer__item"><a href="../about/master.html">管理人について</a></li>
 				<li class="footer__item"><a href="../partner/">協力パートナー募集</a></li>
+				<li class="footer__item"><a href="../web-support/">Web制作・更新のご相談</a></li>
 				<li class="footer__item"><a href="../privacy/">プライバシーポリシー</a></li>
 			</ul>
 			</nav>

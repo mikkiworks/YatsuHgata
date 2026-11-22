@@ -855,6 +855,15 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0 45px;
 }
 
+/* 一覧に戻るリンク */
+.subpage__next--back a::after {
+	content: '\e5cb';
+	left: 0;
+	right: auto;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 /* 基本リスト */
 .subpage__list {
 	list-style: none;
