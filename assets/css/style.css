@@ -339,6 +339,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* 下層ページ上部の鳥：操作を妨げない背景装飾 */
+.main--birds {
+	position: relative;
+	isolation: isolate;
+}
+.main--birds::before {
+	content: '';
+	position: absolute;
+	top: 80px;
+	right: 16px;
+	width: 140px;
+	aspect-ratio: 595 / 418;
+	background: url('../images/birds-background.svg') center / contain no-repeat;
+	opacity: 0.65;
+	pointer-events: none;
+	z-index: -1;
+}
+@media (max-width: 1200px) {
+	.main--birds::before {
+		top: 38px;
+		right: 8px;
+		width: 100px;
+	}
+}
+@media (max-width: 768px) {
+	.main--birds::before {
+		display: none;
+	}
+	.main--birds .pagetitle {
+		position: relative;
+		padding-right: 60px;
+		padding-left: 60px;
+		line-height: 1.5;
+	}
+	.main--birds .pagetitle::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 3%;
+		width: 52px;
+		aspect-ratio: 595 / 418;
+		transform: translateY(-50%);
+		background: url('../images/birds-background.svg') center / contain no-repeat;
+		opacity: 0.65;
+		pointer-events: none;
+	}
+}
+
 /**** 協力パートナー ****/
 .partner {
 	width: 80%;
@@ -440,6 +488,31 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /**** フッター ****/
+.footer {
+	position: relative;
+	padding-top: 80px;
+}
+.footer::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 5%;
+	width: 170px;
+	aspect-ratio: 394 / 159;
+	background: url('../images/fish-background.svg') center / contain no-repeat;
+	opacity: 0.14;
+	pointer-events: none;
+}
+@media (max-width: 768px) {
+	.footer {
+		padding-top: 55px;
+	}
+	.footer::before {
+		left: 3%;
+		width: 110px;
+	}
+}
+
 /* ロゴ */
 .footer__logo {
 	display: block;
