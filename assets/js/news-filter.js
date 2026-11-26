@@ -56,6 +56,7 @@
 		for (const item of list.querySelectorAll('[data-event-end]')) {
 			for (const status of item.querySelectorAll('[data-event-ended]')) status.hidden = item.dataset.eventEnd >= today;
 		}
+		if (category === 'event') await window.initNewsCalendar();
 	} catch (error) {
 		const message = document.createElement('p');
 		message.className = 'section__text';

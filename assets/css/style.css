@@ -2406,3 +2406,36 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 最新情報のカテゴリ */
 .news__item[hidden] { display: none; }
+
+/* イベント一覧の表示切り替え */
+.news-view-tools { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin: -20px 5% 16px; }
+.news-view-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 12px; border: 1px solid #79b7e2; border-radius: 4px; background: #fff; color: #246b9f; font: inherit; font-size: 14px; cursor: pointer; }
+.news-view-toggle svg { flex: none; }
+.news-calendar[hidden], .news__list[hidden], .news-pagination[hidden] { display: none; }
+.news-calendar__controls { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.news-calendar__controls h2 { margin: 0; font-size: 20px; }
+.news-calendar button { font: inherit; cursor: pointer; }
+.news-calendar__controls button { min-height: 44px; padding: 6px 12px; color: #246b9f; background: #edf7fe; border: 1px solid #79b7e2; border-radius: 4px; }
+.news-calendar__help { font-size: 13px; margin: 12px 0; }
+.news-calendar__table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+.news-calendar__table th { padding: 8px 0; background: #edf7fe; }
+.news-calendar__table td { padding: 2px; border: 1px solid #dce8ef; height: 72px; vertical-align: top; }
+.news-calendar__table button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 100%; min-height: 68px; border: 2px solid transparent; border-radius: 4px; background: #fff; color: #333; }
+.news-calendar__table .has-events { background: #fff4d6; color: #76551d; }
+.news-calendar__table button[aria-pressed="true"] { border-color: #246b9f; }
+.news-calendar__table button[aria-current="date"] > span { text-decoration: underline; text-underline-offset: 4px; font-weight: bold; }
+.news-calendar__table small { font-size: 12px; }
+.news-calendar__details { margin-top: 24px; }
+.news-calendar__details h3 { font-size: 18px; }
+.news-calendar__details ul { padding-left: 22px; }
+.news-calendar__details li { margin: 12px 0; }
+.news-calendar button:focus-visible, .news-view-toggle:focus-visible { outline: 3px solid #246b9f; outline-offset: 2px; }
+@media (max-width: 600px) {
+ .news-view-tools { margin: -8px 3% 16px; }
+ .news-calendar__controls { gap: 6px; }
+ .news-calendar__controls h2 { font-size: 17px; }
+ .news-calendar__controls button { padding: 6px 8px; font-size: 13px; }
+ .news-calendar__table td { height: 54px; padding: 1px; }
+ .news-calendar__table button { min-height: 54px; padding: 2px 0; font-size: 14px; }
+ .news-calendar__table small { font-size: 10px; }
+}
