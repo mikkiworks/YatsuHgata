@@ -29,7 +29,7 @@ window.initNewsCalendar = async () => {
  let month = /^\d{4}-(0[1-9]|1[0-2])$/.test(params.get('month') || '') ? params.get('month') : today.slice(0,7);
  const key = date => date.toISOString().slice(0,10);
  const dateFor = (value, day = 1) => new Date(`${value}-${String(day).padStart(2,'0')}T00:00:00Z`);
- const onDate = date => events.filter(event => event.start <= date && event.end >= date && !event.exclude.includes(date));
+ const onDate = date => events.filter(event => event.calendar !== 'period' && event.start <= date && event.end >= date && !event.exclude.includes(date));
  const updateUrl = () => {
   const url = new URL(location.href);
   if (calendar) { url.searchParams.set('view', 'calendar'); url.searchParams.set('month', month); }
@@ -64,7 +64,7 @@ window.initNewsCalendar = async () => {
   controls.append(current);
   const help = document.createElement('p');
   help.className = 'news-calendar__help';
-  help.textContent = '件数のある日付を選ぶと、その日のイベントを表示します。期間開催・応募期間も含みます。';
+  help.textContent = '件数のある日付を選ぶと、その日のイベントを表示します。期間開催・応募受付は下にまとめています。';
   const table = document.createElement('table');
   table.className = 'news-calendar__table'; table.setAttribute('aria-labelledby', heading.id);
   const head = table.createTHead().insertRow();
@@ -106,6 +106,31 @@ window.initNewsCalendar = async () => {
    const note=document.createElement('p');note.className='news-calendar__help';note.textContent='時間・参加方法・開催変更については各記事をご確認ください。';details.append(note);
   }
   panel.append(controls,help,table,details);
+  const monthStart = `${month}-01`;
+  const monthEnd = key(last);
+  const periods = events.filter(event => event.calendar === 'period' && event.start <= monthEnd && event.end >= monthStart);
+  const section = document.createElement('section');
+  section.className = 'news-calendar__periods';
+  const periodHeading = document.createElement('h3');
+  periodHeading.textContent = '今月の期間開催・応募受付';
+  section.append(periodHeading);
+  if (!periods.length) {
+   const empty = document.createElement('p');empty.textContent = 'この月の期間開催・応募受付はありません。';section.append(empty);
+  } else {
+   const ul = document.createElement('ul');
+   for (const event of periods.sort((a,b) => a.start.localeCompare(b.start))) {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = new URL(event.href, new URL('./', location.href)).href;a.textContent = event.title;
+    const dates = document.createElement('p');dates.className = 'news-calendar__help';
+    const label = value => `${Number(value.slice(0,4))}年${Number(value.slice(5,7))}月${Number(value.slice(8))}日`;
+    dates.textContent = `${label(event.start)}〜${label(event.end)}`;
+    if(event.exclude.length) dates.textContent += `（実施しない日：${event.exclude.map(label).join('、')}）`;
+    li.append(a, dates);ul.append(li);
+   }
+   section.append(ul);
+  }
+  panel.append(section);
  }
  async function show(value) {
   toggle.disabled=true;
@@ -116,7 +141,7 @@ window.initNewsCalendar = async () => {
     events=await response.json();
     if(!Array.isArray(events)) throw new Error('形式エラー');
     if(!selected.startsWith(month) || !onDate(selected).length){
-     const first=events.flatMap(event=>[event.start]).filter(date=>date.startsWith(month)).sort()[0];
+     const first=events.filter(event=>event.calendar !== 'period').flatMap(event=>[event.start]).filter(date=>date.startsWith(month)).sort()[0];
      selected=first || `${month}-01`;
     }
    }

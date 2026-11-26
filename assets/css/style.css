@@ -2439,3 +2439,8 @@ h1, h2, h3, h4, h5, h6 {
  .news-calendar__table button { min-height: 54px; padding: 2px 0; font-size: 14px; }
  .news-calendar__table small { font-size: 10px; }
 }
+
+.news-calendar__periods { margin-top: 32px; padding-top: 24px; border-top: 1px solid #dce8ef; }
+.news-calendar__periods h3 { font-size: 18px; }
+.news-calendar__periods ul { padding-left: 22px; }
+.news-calendar__periods li { margin: 16px 0; }

@@ -4,98 +4,112 @@
     "title": "11月29日、谷津駅北口のecotoneで「秋のパンまつり」",
     "start": "2026-11-29",
     "end": "2026-11-29",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1124.html",
     "title": "11月28日、カフェルンルンで「VIVANT」を語るおしゃべり会",
     "start": "2026-11-28",
     "end": "2026-11-28",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1122.html",
     "title": "2027年1月10日、新年の野鳥を探す「新春バードウォッチング」",
     "start": "2027-01-10",
     "end": "2027-01-10",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1103.html",
     "title": "12月、谷津遊路商店街で「歳末福引きセール」開催予定",
     "start": "2026-12-01",
     "end": "2026-12-25",
-    "exclude": []
+    "exclude": [],
+    "calendar": "period"
   },
   {
     "href": "2026/1101-12.html",
     "title": "12月20日、紙芝居で楽しむ谷津干潟の自然と生きもの",
     "start": "2026-12-20",
     "end": "2026-12-20",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-11.html",
     "title": "12月13日、羊毛フェルトでカルガモのヒナを作ろう",
     "start": "2026-12-13",
     "end": "2026-12-13",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-10.html",
     "title": "12月13日、冬の自然素材で作品を作る「谷津っこ探検隊」",
     "start": "2026-12-13",
     "end": "2026-12-13",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-09.html",
     "title": "12月12日、夜の干潟と楽しむ「谷津干潟音楽会 トイ・ル・カント」",
     "start": "2026-12-12",
     "end": "2026-12-12",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-08.html",
     "title": "12月6日、カモの羽色を楽しむ「ぶらっと観察会」",
     "start": "2026-12-06",
     "end": "2026-12-06",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-07.html",
     "title": "12月6日、日本野鳥の会スタッフと双眼鏡・望遠鏡を体験",
     "start": "2026-12-06",
     "end": "2026-12-06",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-06.html",
     "title": "11月23日、親子で秋の自然を楽しむ「生きものゲット！ポイントラリー」",
     "start": "2026-11-23",
     "end": "2026-11-23",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-05.html",
     "title": "11月22日、親子で力を合わせる「みんなでつくろう！秘密基地」",
     "start": "2026-11-22",
     "end": "2026-11-22",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-04.html",
     "title": "11月15日、身近な物や自然物で楽しむ「公園の自由なあそび広場」",
     "start": "2026-11-15",
     "end": "2026-11-15",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-03.html",
     "title": "11月14日、アホウドリの保全を学ぶ長谷川博氏の講演会",
     "start": "2026-11-14",
     "end": "2026-11-14",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1101-02.html",
@@ -105,83 +119,95 @@
     "exclude": [
       "2026-11-09",
       "2026-11-16"
-    ]
+    ],
+    "calendar": "period"
   },
   {
     "href": "2026/1101.html",
     "title": "11月21日、センターのミツバチが作った蜜ろうでバーム作り",
     "start": "2026-11-21",
     "end": "2026-11-21",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1027-02.html",
     "title": "11月30日まで、谷津バラ園SNSフォトコンテスト2026",
     "start": "2026-10-17",
     "end": "2026-11-30",
-    "exclude": []
+    "exclude": [],
+    "calendar": "period"
   },
   {
     "href": "2026/1027.html",
     "title": "11月8日まで、谷津バラ園で「秋のバラまつり」",
     "start": "2026-10-17",
     "end": "2026-11-08",
-    "exclude": []
+    "exclude": [],
+    "calendar": "period"
   },
   {
     "href": "2026/1011-02.html",
     "title": "10月31日、ハロウィンも楽しめる「谷津遊路あきまつり」",
     "start": "2026-10-31",
     "end": "2026-10-31",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1011.html",
     "title": "11月1日、谷津干潟でカワセミを探す「ぶらっと観察会」",
     "start": "2026-11-01",
     "end": "2026-11-01",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/1003.html",
     "title": "10月31日、どんぐりでストールを染める「どんぐりの草木染」",
     "start": "2026-10-31",
     "end": "2026-10-31",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/0927-02.html",
     "title": "10月18日、紙芝居で楽しむ谷津干潟の自然と生きもの",
     "start": "2026-10-18",
     "end": "2026-10-18",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/0927.html",
     "title": "10月11日・12日、浜でカニや貝を探す「干潟の生きもの観察会」",
     "start": "2026-10-11",
     "end": "2026-10-12",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/0924.html",
     "title": "10月4日、谷津干潟の歴史をたどる「ぶらっと観察会」",
     "start": "2026-10-04",
     "end": "2026-10-04",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/0923-02.html",
     "title": "10月3日、小さな生きものに出会う「プランクトン観察コーナー」",
     "start": "2026-10-03",
     "end": "2026-10-03",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   },
   {
     "href": "2026/0923.html",
     "title": "10月3日、アホウドリの保全を学ぶ長谷川博氏の講演会",
     "start": "2026-10-03",
     "end": "2026-10-03",
-    "exclude": []
+    "exclude": [],
+    "calendar": "dates"
   }
 ]

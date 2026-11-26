@@ -8,3 +8,5 @@
 - 一覧のイベントラベル、終了日、記事の開催日を揃える。
 - 一覧・記事を編集後 `node scripts/build-events.mjs` で `assets/data/events.json` を更新し、生成ファイルもデプロイ対象に含める。
 - `node scripts/verify-site.mjs` と `git diff --check` で検証する。記事末尾の戻るボタンには `subpage__next--back` を付ける。
+
+- 期間開催・応募受付は日付の件数には含めず、カレンダー下部の別枠に表示される。複数日にまたがるが特定日開催として日付に載せる場合は `data-event-calendar="dates"` を明示する（例：2日間の観察会）。

@@ -22,7 +22,9 @@ export async function buildEvents(check = false) {
    const valid = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') && new Date(value+'T00:00:00Z').toISOString().slice(0,10) === value;
    if (!valid(start) || !valid(end) || start > end || exclude.some(d => !valid(d) || d < start || d > end)) throw new Error(`開催日を確認してください: ${href}`);
    const title = article.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1].replace(/<[^>]*>/g, '').trim();
-   events.push({ href, title, start, end, exclude });
+   const calendar = attrs.match(/data-event-calendar="([^"]+)"/)?.[1] || (start === end ? 'dates' : 'period');
+   if (!['dates', 'period'].includes(calendar)) throw new Error(`カレンダー分類が不正です: ${href}`);
+   events.push({ href, title, start, end, exclude, calendar });
   }
  }
  const content = JSON.stringify(events, null, 2)+'\n';
